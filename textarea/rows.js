@@ -1,33 +1,17 @@
+// priskiriam kintamuosius minrow ir maxrow ir textarea
 var minRows = 4;
-
-
-var myTextareaRows = document.getElementById("myTextarea").rows;
-var textArea = document.getElementById("myTextarea");
 var maxRows = 12;
-
+var myTextarea = document.getElementById("myTextarea");
+// tikrinam textarea ir uzdedam min row skaiciu
 if (myTextarea !== "") {
   myTextarea.rows = minRows;
 }
-
-function texAreaSize(textarea) {
-
-}
-
+//tikrinam ar textarea perziangia min row skaiciu, pagal raidziu skaiciu ir uzdedam max row. Max row nuimam, jei text area sumazeja iki min row.
 function count(area) {
   // document.getElementById("count1").innerHTML = area.value.length;
-  if (area.value.length > 131) {
+  if (area.value.length > 130) {
     area.rows = maxRows;
   } else {
     area.rows = minRows;
   }
 }
-
-// if (myTextarea.clientHeight < myTextarea.scrollHeight)
-//   {
-//     textField.style.height = textField.scrollHeight + "px";
-//     if (textField.clientHeight < textField.scrollHeight)
-//     {
-//       textField.style.height = 
-//         (textField.scrollHeight * 2 - textField.clientHeight) + "px";
-//     }
-//   }

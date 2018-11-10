@@ -1,0 +1,24 @@
+/* BASICS  */
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* background */
+body {
+  background-image: linear-gradient(90deg, #4fc3f7, #ff8a65);
+
+}
+
+.areaT {
+  text-align: center;
+  margin-top: 20%;
+  color: #fff;
+}
+
+textarea {
+  resize: none;
+  border-radius: 5px;
+  padding: 5px;
+}
