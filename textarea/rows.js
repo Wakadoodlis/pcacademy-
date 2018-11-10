@@ -2,17 +2,24 @@ var minRows = 4;
 
 
 var myTextareaRows = document.getElementById("myTextarea").rows;
+var textArea = document.getElementById("myTextarea");
 var maxRows = 12;
 
 if (myTextarea !== "") {
   myTextarea.rows = minRows;
-} else if (myTextarea.clientHeight < myTextarea.offsetHeight) {
-  myTextarea.setAttribute("rows", maxRows);
-
 }
 
 function texAreaSize(textarea) {
 
+}
+
+function count(area) {
+  // document.getElementById("count1").innerHTML = area.value.length;
+  if (area.value.length > 131) {
+    area.rows = maxRows;
+  } else {
+    area.rows = minRows;
+  }
 }
 
 // if (myTextarea.clientHeight < myTextarea.scrollHeight)
