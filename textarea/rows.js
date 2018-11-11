@@ -1,5 +1,5 @@
 // priskiriam kintamuosius minrow ir maxrow ir textarea
-var minRows = 4;
+var minRows = 3;
 var maxRows = 12;
 var myTextarea = document.getElementById("myTextarea");
 // tikrinam textarea ir uzdedam min row skaiciu
