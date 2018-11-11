@@ -11,12 +11,17 @@ body {
 
 }
 
+.wraper {
+  height: 50vh;
+}
+
 .areaT {
   text-align: center;
   margin-top: 14%;
   color: #fff;
   font-family: Futura, Sans-Serif;
   position: relative;
+  height: 350px;
 }
 
 textarea {
