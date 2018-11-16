@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "./build",
+    "watch": true,
+    "sourceMap": true
+  },
+
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}
