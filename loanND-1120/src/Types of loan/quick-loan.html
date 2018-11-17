@@ -9,21 +9,61 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
     crossorigin="anonymous" />
   <!-- main style -->
-  <link rel="stylesheet" href="src/style/loans-style.css" />
+  <link rel="stylesheet" href="../style/loans-style.css" />
   <title>Quick loan</title>
 </head>
 
-<body>
-  <div class="wraper">
+<body class="qLoan">
+  <div class="qLoanWraper">
     <div class="container-fluid">
       <header>
-        <nav class="nav bg-light">NAV</nav>
+        <nav class="nav">NAV
+          <!-- <a href="../../index.html">back</a> -->
+        </nav>
       </header>
     </div>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-5 mr-2 loan-discription">
+          <h1>Quick loan</h1>
+          <ul>
+            <li>Interest - 20% ;</li>
+            <li>Loan up to 5 000 € ;</li>
+            <li>Loan term up to 24 month ;</li>
+            <li>For Your small dreams to come true!</li>
+          </ul>
+          <p>Pavyzdžiui, skolinantis 2000 Eur, kai sudaroma 72 mėn. sutartis, fiksuota metinė palūkanų norma - 7%,
+            mėnesinis administravimo mokestis – 7 Eur, sutarties sudarymo mokestis – 7% (finansuojamas sutarties
+            sudarymo dieną ir grąžinamas lygiomis dalimis per visą sutarties galiojimo laikotarpį), mėnesio įmoka –
+            43,04 Eur, bendra sumokama suma – 3099,06 Eur, bendra vartojimo kredito kainos metinė norma – 16,87%.</p>
+
+        </div>
+        <div class="col-md-5">
+          <div class="form-wraper">
+            <form>
+              <div class="form-group">
+                <label for="loanAmount" class="loanLabel">Loan amount</label>
+                <input type="number" class="form-control" id="loanAmount" aria-describedby="emailHelp" value="200"
+                  autofocus>
+                <small id="loanHelp" class="form-text text-muted ">Up to 5000 €</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1" class="loanLabel">Loan term</label>
+                <input type="number" class="form-control" id="loanTerm" value="1">
+                <small id="termHelp" class="form-text text-muted">Up to 24 month</small>
+              </div>
+              <div class="payMonth" id="payMonth">
+                <h5 class="pt-3">Preliminary monthly installment:</h5>
+                <h5>55 €/month</h5>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <h2> Welcome to Quick loan!</h2>
 
 </body>
-<script src="build/loan.js"></script>
+<script src="../../build/loan.js"></script>
 
 </html>

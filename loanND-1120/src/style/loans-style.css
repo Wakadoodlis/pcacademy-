@@ -20,3 +20,80 @@
   padding: 55px;
   height: 110px;
 }
+
+
+/* 
+-=-==-=-==-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=
+-==-==-    QUICK LOAN     -=-=-=-=-=-=-=--=-=
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+*/
+
+.nav {
+  position: relative;
+}
+
+/* .nav a {
+  width: 50px;
+  padding: 5px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: #a7cb58;
+  border-radius: 5px;
+} */
+
+.qLoan {
+  /* background-image: linear-gradient(to right top, #365788, #0083af, #00aeb2, #43d494, #c7ef6f); */
+  background-image: linear-gradient(to right top, #9cbae8, #57c7ec, #03d0cf, #5ad296, #a7cb58);
+
+}
+
+.qLoanWraper {
+  color: #003C5A;
+  height: 710px;
+}
+
+.loan-discription h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.loan-discription ul {
+  margin-bottom: 4rem;
+}
+
+.form-wraper {
+  background-color: #fff;
+  padding: 20px;
+  width: 300px;
+  height: 350px;
+  border-radius: 5px;
+  box-shadow: 5px 10px 8px #3b3b3b;
+}
+
+/* center in form */
+small#loanHelp.form-text.text-muted,
+small#termHelp.form-text.text-muted {
+  text-align: center;
+}
+
+label.loanLabel {
+  display: block;
+  text-align: center;
+
+}
+
+input#loanAmount.form-control,
+input#loanTerm.form-control {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.payMonth h5 {
+  font-size: 16px;
+}
+
+.payMonth h5:last-of-type {
+  text-align: center;
+}
