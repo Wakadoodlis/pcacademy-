@@ -1,3 +1,4 @@
 import QuickLoan from "../Classes/quickLoan";
 
-let quickLoan = new QuickLoan(2, 4);
+let quickLoan = new QuickLoan();
+quickLoan.countPayment();
