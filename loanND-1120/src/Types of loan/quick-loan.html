@@ -39,22 +39,24 @@
 
         </div>
         <div class="col-md-5">
-          <div class="form-wraper">
-            <form>
+          <div class="form-wraper" id="form-wr">
+            <form id="myForm">
               <div class="form-group">
                 <label for="loanAmount" class="loanLabel">Loan amount</label>
-                <input type="number" class="form-control" id="loanAmount" aria-describedby="emailHelp" value="2000"
-                  autofocus>
+                <input type="number" class="form-control" id="loanAmount" aria-describedby="emailHelp" autofocus value="5000">
+                <div id="valueToBig" class="toBig"></div>
                 <small id="loanHelp" class="form-text text-muted ">Up to 5000 €</small>
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1" class="loanLabel">Loan term</label>
-                <input type="number" class="form-control" id="loanTerm" value="1">
+                <input type="number" class="form-control" id="loanTerm" value="22">
+                <div id="termToBig" class="toBig"></div>
                 <small id="termHelp" class="form-text text-muted">Up to 24 month</small>
               </div>
+              <!-- <button class="btn btn-small" ng-onclick="getAmount()"> skaiciuoti</button> -->
               <div class="payMonth" id="payMonth">
                 <h5 class="pt-3">Preliminary monthly installment:</h5>
-                <!-- <h5>55 €/month</h5> -->
+                <h5 id="display"></h5>
               </div>
             </form>
           </div>

@@ -45,7 +45,6 @@
 .qLoan {
   /* background-image: linear-gradient(to right top, #365788, #0083af, #00aeb2, #43d494, #c7ef6f); */
   background-image: linear-gradient(to right top, #9cbae8, #57c7ec, #03d0cf, #5ad296, #a7cb58);
-
 }
 
 .qLoanWraper {
@@ -69,6 +68,21 @@
   height: 350px;
   border-radius: 5px;
   box-shadow: 5px 10px 8px #3b3b3b;
+}
+
+.toBig {
+  width: 250px;
+  height: 50px;
+  background-color: rgb(245, 241, 241);
+  box-shadow: 2px 6px 5px #777676;
+  font-weight: 500;
+  border-radius: 2px;
+  font-size: .9rem;
+  z-index: 99;
+  justify-content: center;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-top: .8rem;
 }
 
 /* center in form */
