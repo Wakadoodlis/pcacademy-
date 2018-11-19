@@ -1,8 +1,22 @@
 import QuickLoan from "../Classes/quickLoan";
+import HomeLoan from "../Classes/homeLoan";
 
+let button = document.getElementById("quickBtn");
+// QUICK LOAN
 let quickLoan = new QuickLoan();
-// quickLoan.countPayment();
-// console.log(quickLoan);
+
+// let button = document.getElementById("quickBtn");
+button.onclick = function(e) {
+  e.preventDefault();
+  quickLoan.getAmount();
+  quickLoan.checkFields();
+};
 quickLoan.getAmount();
-quickLoan.checkValue();
-quickLoan.checkTerm();
+quickLoan.checkFields();
+
+// HOME LOAN
+let homeLoan = new HomeLoan();
+
+button.onclick = function(e) {
+  e.preventDefault();
+};

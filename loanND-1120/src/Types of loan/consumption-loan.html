@@ -10,19 +10,76 @@
     crossorigin="anonymous" />
   <!-- main style -->
   <link rel="stylesheet" href="../style/loans-style.css" />
-  <title>Consumption loan</title>
+  <title>Quick loan</title>
 </head>
 
-<body>
-  <div class="wraper">
+<body class="loan">
+  <div class="loanWraper com-loanWraper">
     <div class="container-fluid">
       <header>
-        <nav class="nav bg-light">NAV</nav>
+        <nav class="nav">
+          <a href="../../index.html">Main</a>
+          <a href="quick-loan.html">Quick loan</a>
+          <a href="housing-loan.html">Housing loan</a>
+          <a href="consumption-loan.html" class="active">Consumption loan</a>
+        </nav>
       </header>
     </div>
-    <h2> Welcome to Consumption loan!</h2>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-5 mr-2 loan-discription">
+          <h1>Consuming loan</h1>
+          <ul>
+            <li>Interest ;</li>
+            <li>Loan depends on your salary ;</li>
+            <li>Loan term up to 5 yars ;</li>
+            <li>For Your daily dreams to come true!</li>
+          </ul>
+          <p>Pavyzdžiui, skolinantis 2000 Eur, kai sudaroma 72 mėn. sutartis, fiksuota metinė palūkanų norma - 7%,
+            mėnesinis administravimo mokestis – 7 Eur, sutarties sudarymo mokestis – 7% (finansuojamas sutarties
+            sudarymo dieną ir grąžinamas lygiomis dalimis per visą sutarties galiojimo laikotarpį), mėnesio įmoka –
+            43,04 Eur, bendra sumokama suma – 3099,06 Eur, bendra vartojimo kredito kainos metinė norma – 16,87%.</p>
+
+        </div>
+        <div class="col-md-5">
+          <div class="form-wraper consForm-wraper" id="form-wr">
+            <form id="myForm">
+              <!-- loan amount -->
+              <div class="form-group">
+                <label for="loanAmount" class="loanLabel">Loan amount</label>
+                <input type="number" class="form-control bg" id="loanAmount" aria-describedby="emailHelp" autofocus
+                  value="5000">
+                <small id="loanHelp" class="form-text text-muted ">Up to 5000 €</small>
+              </div>
+              <!-- loan term -->
+              <div class="form-group">
+                <label for="exampleInputPassword1" class="loanLabel">Loan term</label>
+                <input type="number" class="form-control bg" id="loanTerm" value="22">
+                <small id="termHelp" class="form-text text-muted">Up to 24 month</small>
+              </div>
+              <!-- select -->
+              <select id="itemType" class="selectType">
+                <option value="volvo">Vechile</option>
+                <option value="saab">Allotment</option>
+                <option value="mercedes">Structure</option>
+                <option value="audi">Electronic device</option>
+              </select>
+              <small id="loanHelp" class="form-text text-muted mb-4">Select item type </small>
+
+              <!-- culculate button -->
+              <button class="btn btn-outline-primary con-cen" id="quickBtn"> Culculate</button>
+              <div class="payMonth" id="payMonth">
+                <h5 class="pt-3">Preliminary monthly installment:</h5>
+                <h5 id="display"></h5>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
 </body>
-<script src="../../build/loan.js"></script>
+<script src="../../dist/bundle.js"></script>
 
 </html>

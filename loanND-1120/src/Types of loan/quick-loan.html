@@ -13,12 +13,15 @@
   <title>Quick loan</title>
 </head>
 
-<body class="qLoan">
-  <div class="qLoanWraper">
+<body class="loan">
+  <div class="loanWraper">
     <div class="container-fluid">
       <header>
-        <nav class="nav">NAV
-          <!-- <a href="../../index.html">back</a> -->
+        <nav class="nav">
+          <a href="../../index.html">Main</a>
+          <a href="quick-loan.html" class="active">Quick loan</a>
+          <a href="housing-loan.html">Housing loan</a>
+          <a href="consumption-loan.html">Consumption loan</a>
         </nav>
       </header>
     </div>
@@ -43,17 +46,17 @@
             <form id="myForm">
               <div class="form-group">
                 <label for="loanAmount" class="loanLabel">Loan amount</label>
-                <input type="number" class="form-control" id="loanAmount" aria-describedby="emailHelp" autofocus value="5000">
-                <div id="valueToBig" class="toBig"></div>
+                <input type="number" class="form-control" id="loanAmount" aria-describedby="emailHelp" autofocus value="1200">
+                <!-- <div id="valueToBig" class="toBig"></div> -->
                 <small id="loanHelp" class="form-text text-muted ">Up to 5000 €</small>
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1" class="loanLabel">Loan term</label>
-                <input type="number" class="form-control" id="loanTerm" value="22">
-                <div id="termToBig" class="toBig"></div>
+                <input type="number" class="form-control" id="loanTerm" value="12">
+                <!-- <div id="termToBig" class="toBig"></div> -->
                 <small id="termHelp" class="form-text text-muted">Up to 24 month</small>
               </div>
-              <!-- <button class="btn btn-small" ng-onclick="getAmount()"> skaiciuoti</button> -->
+              <button class="btn btn-outline-primary" id="quickBtn"> Culculate</button>
               <div class="payMonth" id="payMonth">
                 <h5 class="pt-3">Preliminary monthly installment:</h5>
                 <h5 id="display"></h5>

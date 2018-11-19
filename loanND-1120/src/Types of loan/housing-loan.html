@@ -10,19 +10,78 @@
     crossorigin="anonymous" />
   <!-- main style -->
   <link rel="stylesheet" href="../style/loans-style.css" />
-  <title>Housing loan</title>
+  <title>Quick loan</title>
 </head>
 
-<body>
-  <div class="wraper">
+<body class="loan">
+  <div class="loanWraper houseLoane-wraper">
     <div class="container-fluid">
       <header>
-        <nav class="nav bg-light">NAV</nav>
+        <nav class="nav">
+          <a href="../../index.html">Main</a>
+          <a href="quick-loan.html">Quick loan</a>
+          <a href="housing-loan.html" class="active">Housing loan</a>
+          <a href="consumption-loan.html">Consumption loan</a>
+        </nav>
       </header>
     </div>
-    <h2> Welcome to Housing loan!</h2>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-md-5 mr-2 loan-discription">
+          <h1>Housing loan</h1>
+          <ul>
+            <li>Interest - 2 % ;</li>
+            <li>Loan amount depends on salary ;</li>
+            <li>Loan term up to 30 years ;</li>
+            <li>For Your BIG dreams to come true!</li>
+          </ul>
+          <p>Pavyzdžiui, skolinantis 2000 Eur, kai sudaroma 72 mėn. sutartis, fiksuota metinė palūkanų norma - 7%,
+            mėnesinis administravimo mokestis – 7 Eur, sutarties sudarymo mokestis – 7% (finansuojamas sutarties
+            sudarymo dieną ir grąžinamas lygiomis dalimis per visą sutarties galiojimo laikotarpį), mėnesio įmoka –
+            43,04 Eur, bendra sumokama suma – 3099,06 Eur, bendra vartojimo kredito kainos metinė norma – 16,87%.</p>
+
+        </div>
+        <div class="col-md-5">
+          <div class="form-wraper house-form" id="form-wr">
+            <form id="myForm">
+              <!-- LOAN AMOUNT -->
+              <div class="form-group">
+                <label for="loanAmount" class="loanLabel">Loan amount</label>
+                <input type="number" class="form-control bg" id="loanAmount" aria-describedby="emailHelp" autofocus
+                  value="1200">
+                <small id="loanHelp" class="form-text text-muted ">Amount depends from salary </small>
+              </div>
+              <!-- LOAN TERM -->
+              <div class="form-group">
+                <label for="exampleInputPassword1" class="loanLabel">Loan term</label>
+                <input type="number" class="form-control bg" id="loanTerm" value="12">
+                <small id="termHelp" class="form-text text-muted">Up to 30 year</small>
+              </div>
+              <!-- SALARY -->
+              <div class="form-group">
+                <label for="exampleInputPassword1" class="loanLabel">Your salary</label>
+                <input type="number" class="form-control bg" id="salary" value="1200">
+                <small id="termHelp" class="form-text text-muted">Your salary in month</small>
+              </div>
+              <!-- CHILDREN -->
+              <div class="form-group">
+                <label for="exampleInputPassword1" class="loanLabel">Children</label>
+                <input type="number" class="form-control bg" id="children" value="2">
+                <small id="termHelp" class="form-text text-muted">How many children do You have?</small>
+              </div>
+              <button class="btn btn-outline-primary cent" id="quickBtn"> Culculate</button>
+              <div class="payMonth" id="payMonth">
+                <h5 class="pt-3">Preliminary monthly installment:</h5>
+                <h5 id="display"></h5>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+
 </body>
-<script src="../../build/loan.js"></script>
+<script src="../../dist/bundle.js"></script>
 
 </html>

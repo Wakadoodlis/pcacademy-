@@ -15,28 +15,51 @@ export default class QuickLoan extends Loans {
   // //   if(document.getElementById("loanAmount").value != this.lValue)
   // // }
 
-  checkValue() {
-    if (this.lValue > this.maxValue) {
-      document.getElementById("form-wr").style.height = "400" + "px";
-      document.getElementById("valueToBig").innerHTML =
-        "Maximum amount - 5000€";
-    } else {
-      document.getElementById("valueToBig").remove();
-      document.getElementById("form-wr").style.height = "350" + "px";
-    }
-  }
+  // checkValue() {
+  //   this.lValue = parseInt(
+  //     (<HTMLInputElement>document.getElementById("loanAmount")).value
+  //   );
+  //   this.lTerm = parseInt(
+  //     (<HTMLInputElement>document.getElementById("loanTerm")).value
+  //   );
+  //   this.maxValue = 5000;
 
-  checkTerm() {
-    if (this.lTerm > this.maxTerm) {
+  //   if (this.lValue > this.maxValue) {
+  //     document.getElementById("form-wr").style.height = "400" + "px";
+  //     document.getElementById("display").innerHTML = `Maximum amount - 5000 €`;
+  //   } else {
+  //     document.getElementById("valueToBig").remove();
+  //     document.getElementById("form-wr").style.height = "350" + "px";
+  //   }
+  // }
+
+  checkFields() {
+    this.lValue = parseInt(
+      (<HTMLInputElement>document.getElementById("loanAmount")).value
+    );
+    this.lTerm = parseInt(
+      (<HTMLInputElement>document.getElementById("loanTerm")).value
+    );
+    this.maxTerm = 24;
+    this.maxValue = 5000;
+    if (this.lTerm > this.maxTerm || this.lValue > this.maxValue) {
       document.getElementById("form-wr").style.height = "420" + "px";
-      document.getElementById("termToBig").innerHTML =
-        "Maximum term - 24 month";
+      document.getElementById("display").style.color = "red";
+      document.getElementById(
+        "display"
+      ).innerHTML = `! Maximum amount or term was exceeded !`;
     } else {
-      document.getElementById("termToBig").remove();
-      document.getElementById("form-wr").style.height = "350" + "px";
+      document.getElementById("display").style.color = "#003C5A";
     }
   }
   getAmount() {
+    this.lValue = parseInt(
+      (<HTMLInputElement>document.getElementById("loanAmount")).value
+    );
+    this.lTerm = parseInt(
+      (<HTMLInputElement>document.getElementById("loanTerm")).value
+    );
+    this.lInterest = 1.2;
     let payment = (this.lValue * this.lInterest) / this.lTerm;
     document.getElementById("display").innerHTML = `${payment.toFixed(
       2

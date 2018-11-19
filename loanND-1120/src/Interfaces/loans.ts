@@ -2,6 +2,8 @@ export default abstract class Loans {
   lValue: number;
   lTerm: number;
   lInterest: number;
+  pSalary: number;
+  pChildren: number;
   maxValue: number;
   maxTerm: number;
 
