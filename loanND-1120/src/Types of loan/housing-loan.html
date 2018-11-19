@@ -47,32 +47,33 @@
               <!-- LOAN AMOUNT -->
               <div class="form-group">
                 <label for="loanAmount" class="loanLabel">Loan amount</label>
-                <input type="number" class="form-control bg" id="loanAmount" aria-describedby="emailHelp" autofocus
-                  value="1200">
+                <input type="number" class="form-control bg" id="loanAmountH" aria-describedby="emailHelp" autofocus
+                  value="2000">
                 <small id="loanHelp" class="form-text text-muted ">Amount depends from salary </small>
               </div>
               <!-- LOAN TERM -->
               <div class="form-group">
                 <label for="exampleInputPassword1" class="loanLabel">Loan term</label>
-                <input type="number" class="form-control bg" id="loanTerm" value="12">
+                <input type="number" class="form-control bg" id="loanTermH" value="10">
                 <small id="termHelp" class="form-text text-muted">Up to 30 year</small>
               </div>
               <!-- SALARY -->
               <div class="form-group">
                 <label for="exampleInputPassword1" class="loanLabel">Your salary</label>
-                <input type="number" class="form-control bg" id="salary" value="1200">
+                <input type="number" class="form-control bg" id="salaryH" value="1200">
                 <small id="termHelp" class="form-text text-muted">Your salary in month</small>
               </div>
               <!-- CHILDREN -->
               <div class="form-group">
                 <label for="exampleInputPassword1" class="loanLabel">Children</label>
-                <input type="number" class="form-control bg" id="children" value="2">
+                <input type="number" class="form-control bg" id="childrenH" value="2">
                 <small id="termHelp" class="form-text text-muted">How many children do You have?</small>
               </div>
-              <button class="btn btn-outline-primary cent" id="quickBtn"> Culculate</button>
+              <button class="btn btn-outline-primary cent" id="quickBtnH"> Culculate</button>
               <div class="payMonth" id="payMonth">
-                <h5 class="pt-3">Preliminary monthly installment:</h5>
-                <h5 id="display"></h5>
+                <h4>Monthly payments: <span id="monthlyh"></span> </h4>
+                <h5 class="pt-1"> Maximum Loan amount:</h5>
+                <h5 id="displayH"></h5>
               </div>
             </form>
           </div>
@@ -80,8 +81,8 @@
       </div>
     </div>
   </div>
-
+  <script src="../../dist/bundle.js"></script>
 </body>
-<script src="../../dist/bundle.js"></script>
+<!-- <script src="../../dist/bundle.js"></script> -->
 
 </html>

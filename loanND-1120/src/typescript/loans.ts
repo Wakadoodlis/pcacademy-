@@ -1,22 +1,50 @@
-import QuickLoan from "../Classes/quickLoan";
-import HomeLoan from "../Classes/homeLoan";
+// import QuickLoan from "../loan Classes/quickLoan";
+import Houseloan from "../loan Classes/housingLoan";
+// import ConsumptionLoan from "../loan Classes/consumLoan";
 
-let button = document.getElementById("quickBtn");
-// QUICK LOAN
-let quickLoan = new QuickLoan();
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=
+// =-=-=-=-=-=-=-=-=  QUICK LOAN  -=-=-=-=-=-=-=-=-=-
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+// let button = document.getElementById("quickBtn");
+// let quickLoan = new QuickLoan();
 
 // let button = document.getElementById("quickBtn");
-button.onclick = function(e) {
-  e.preventDefault();
-  quickLoan.getAmount();
-  quickLoan.checkFields();
-};
-quickLoan.getAmount();
-quickLoan.checkFields();
+// button.onclick = function(e) {
+//   e.preventDefault();
+//   quickLoan.getAmount();
+//   quickLoan.checkFields();
+// };
+// quickLoan.getAmount();
+// quickLoan.checkFields();
 
-// HOME LOAN
-let homeLoan = new HomeLoan();
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=
+// =-=-=-=-=-=-=-=-=  home LOAN  -=-=-=-=-=-=-=-=-=-
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-button.onclick = function(e) {
-  e.preventDefault();
+let buttonh = document.getElementById("quickBtnH");
+buttonh.onclick = function(a) {
+  let houseloan = new Houseloan(
+    parseInt((<HTMLInputElement>document.getElementById("salaryH")).value),
+    parseInt((<HTMLInputElement>document.getElementById("loanTermH")).value)
+  );
+  a.preventDefault();
+  document.getElementById(
+    "displayH"
+  ).innerHTML = `${houseloan.calculate()} €/month`;
 };
+// housingLoan.getLoanAmount();
+// buttonh.onclick = function(e) {
+//   e.preventDefault();
+//   alert("housing ");
+// };
+
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=
+// =-=-=-=-=-=-=-=-=  consumption LOAN  -=-=-=-=-=-=-=-=-=-
+// -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+// let buttonc = document.getElementById("quickBtnC");
+// console.log(buttonc);
+// let consumptionLoan = new ConsumptionLoan();
+// buttonc.onclick = function(c) {
+//   c.preventDefault();
+//   alert("consum");
+// };

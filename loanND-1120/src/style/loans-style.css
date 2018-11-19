@@ -146,13 +146,21 @@ input#salary.form-control {
   font-size: 16px;
 }
 
+.payMonth h4 {
+  font-size: 14px;
+  margin-top: 15px;
+  padding: 0;
+}
+
 .payMonth h5:last-of-type {
   text-align: center;
 }
 
 /* button */
 
-button#quickBtn.btn.btn-outline-primary {
+button#quickBtn.btn.btn-outline-primary,
+button#quickBtnH.btn.btn-outline-primary,
+button#quickBtnC.btn.btn-outline-primary {
   margin-left: 5rem;
   /* background-color: #a7cb58; */
   border-color: #a7cb58;
@@ -172,26 +180,26 @@ button#quickBtn.btn.btn-outline-primary:hover {
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 */
 .houseLoane-wraper {
-  height: 850px;
+  height: 900px;
 }
 
 
 .house-form {
   width: 350px;
-  height: 600px;
+  height: 680px;
 
 }
 
-input#loanAmount.form-control.bg,
-input#loanTerm.form-control.bg,
-input#salary.form-control.bg,
-input#children.form-control.bg {
+input#loanAmountH.form-control.bg,
+input#loanTermH.form-control.bg,
+input#salaryH.form-control.bg,
+input#childrenH.form-control.bg {
   width: 70%;
   margin: 0 auto;
   text-align: center;
 }
 
-button#quickBtn.btn.btn-outline-primary.cent {
+button#quickBtnH.btn.btn-outline-primary.cent {
   margin-left: 7rem;
 
 }
@@ -212,16 +220,14 @@ button#quickBtn.btn.btn-outline-primary.cent {
 
 }
 
-button#quickBtn.btn.btn-outline-primary.con-cen {
+button#quickBtnC.btn.btn-outline-primary.con-cen {
   margin-left: 6rem;
 
 }
 
 .selectType {
   width: 70%;
-  text-align: center;
   border: 1px solid #ced4da;
   margin-left: 2.6rem;
   background-color: #fff;
-
 }
