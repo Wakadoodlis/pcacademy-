@@ -10,7 +10,7 @@
     crossorigin="anonymous" />
   <!-- main style -->
   <link rel="stylesheet" href="../style/loans-style.css" />
-  <title>Quick loan</title>
+  <title>House loan</title>
 </head>
 
 <body class="loan">
@@ -20,25 +20,26 @@
         <nav class="nav">
           <a href="../../index.html">Main</a>
           <a href="quick-loan.html">Quick loan</a>
-          <a href="housing-loan.html" class="active">Housing loan</a>
-          <a href="consumption-loan.html">Consumption loan</a>
+          <a href="house-loan.html" class="active">House loan</a>
+          <a href="consumer-loan.html">Consumption loan</a>
         </nav>
       </header>
     </div>
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-md-5 mr-2 loan-discription">
-          <h1>Housing loan</h1>
+          <h1>House loan</h1>
+          <hr>
           <ul>
             <li>Interest - 2 % ;</li>
-            <li>Loan amount depends on salary ;</li>
+            <li>Maximum Loan amount depends on Your salary and if You have childrens;</li>
             <li>Loan term up to 30 years ;</li>
             <li>For Your BIG dreams to come true!</li>
           </ul>
-          <p>Pavyzdžiui, skolinantis 2000 Eur, kai sudaroma 72 mėn. sutartis, fiksuota metinė palūkanų norma - 7%,
-            mėnesinis administravimo mokestis – 7 Eur, sutarties sudarymo mokestis – 7% (finansuojamas sutarties
-            sudarymo dieną ir grąžinamas lygiomis dalimis per visą sutarties galiojimo laikotarpį), mėnesio įmoka –
-            43,04 Eur, bendra sumokama suma – 3099,06 Eur, bendra vartojimo kredito kainos metinė norma – 16,87%.</p>
+          <p> For example, if Your loan is 20 000 Euros, for 10 years term, Your salary is 1200 Euros/month and You
+            dont have any children, then Your monthly payment would be 170 Euros and maximum loan amount would be 96
+            000 Euros. If You have 1 child - Maximum loan amount would be 84 000 Euros.You have to ensure Your
+            childrens welfare.</p>
 
         </div>
         <div class="col-md-5">
@@ -54,7 +55,7 @@
               <!-- LOAN TERM -->
               <div class="form-group">
                 <label for="exampleInputPassword1" class="loanLabel">Loan term</label>
-                <input type="number" class="form-control bg" id="loanTermH" value="10">
+                <input type="number" class="form-control bg" id="loanTermH" value="10" max="30">
                 <small id="termHelp" class="form-text text-muted">Up to 30 year</small>
               </div>
               <!-- SALARY -->
@@ -66,12 +67,12 @@
               <!-- CHILDREN -->
               <div class="form-group">
                 <label for="exampleInputPassword1" class="loanLabel">Children</label>
-                <input type="number" class="form-control bg" id="childrenH" value="2">
+                <input type="number" class="form-control bg" id="childrenH" value="0">
                 <small id="termHelp" class="form-text text-muted">How many children do You have?</small>
               </div>
               <button class="btn btn-outline-primary cent" id="quickBtnH"> Culculate</button>
               <div class="payMonth" id="payMonth">
-                <!-- <h4>Monthly payments: <span id="monthlyh"></span> </h4> -->
+                <h4>Monthly payments: <span id="monthlyh"></span> </h4>
                 <h5 class="pt-1"> Maximum Loan amount:</h5>
                 <h5 id="displayH"></h5>
               </div>
@@ -81,8 +82,8 @@
       </div>
     </div>
   </div>
-  <script src="../../dist/bundle.js"></script>
+
 </body>
-<!-- <script src="../../dist/bundle.js"></script> -->
+<script src="../../dist/bundle.js"></script>
 
 </html>

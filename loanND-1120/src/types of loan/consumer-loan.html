@@ -10,7 +10,7 @@
     crossorigin="anonymous" />
   <!-- main style -->
   <link rel="stylesheet" href="../style/loans-style.css" />
-  <title>Quick loan</title>
+  <title>Consumer Loan</title>
 </head>
 
 <body class="loan">
@@ -20,25 +20,25 @@
         <nav class="nav">
           <a href="../../index.html">Main</a>
           <a href="quick-loan.html">Quick loan</a>
-          <a href="housing-loan.html">Housing loan</a>
-          <a href="consumption-loan.html" class="active">Consumption loan</a>
+          <a href="house-loan.html">House loan</a>
+          <a href="consumer-loan.html" class="active">Consumption loan</a>
         </nav>
       </header>
     </div>
     <div class="container">
       <div class="row justify-content-md-center">
         <div class="col-md-5 mr-2 loan-discription">
-          <h1>Consuming loan</h1>
+          <h1>Consumer Loan</h1>
+          <hr>
           <ul>
-            <li>Interest ;</li>
-            <li>Loan depends on your salary ;</li>
-            <li>Loan term up to 5 yars ;</li>
+            <li>Interests: 10 % for Vechile; 15 % for Allotment and 20% for Structure;</li>
+            <li>Loan term up to 5 years ;</li>
             <li>For Your daily dreams to come true!</li>
           </ul>
-          <p>Pavyzdžiui, skolinantis 2000 Eur, kai sudaroma 72 mėn. sutartis, fiksuota metinė palūkanų norma - 7%,
-            mėnesinis administravimo mokestis – 7 Eur, sutarties sudarymo mokestis – 7% (finansuojamas sutarties
-            sudarymo dieną ir grąžinamas lygiomis dalimis per visą sutarties galiojimo laikotarpį), mėnesio įmoka –
-            43,04 Eur, bendra sumokama suma – 3099,06 Eur, bendra vartojimo kredito kainos metinė norma – 16,87%.</p>
+          <p>For example, if Your loan is 5000 Euros for Vechile, loan term is 1 year, then Your monthly payment would
+            be
+            458 Euros.
+            The same amount for Allotment would be 479 Euros, and for Structure - 500 Euros.</p>
 
         </div>
         <div class="col-md-5">
@@ -54,22 +54,21 @@
               <!-- loan term -->
               <div class="form-group">
                 <label for="exampleInputPassword1" class="loanLabel">Loan term</label>
-                <input type="number" class="form-control bg" id="loanTermC" value="22">
+                <input type="number" class="form-control bg" id="loanTermC" value="1">
                 <small id="termHelp" class="form-text text-muted">Up to 5 years</small>
               </div>
               <!-- select -->
               <select id="itemTypeC" class="selectType">
-                <option value="volvo">Vechile</option>
-                <option value="saab">Allotment</option>
-                <option value="mercedes">Structure</option>
-                <option value="audi">Electronic device</option>
+                <option value="Vechile">Vechile</option>
+                <option value="Allotment">Allotment</option>
+                <option value="Structure">Structure</option>
               </select>
               <small id="loanHelp" class="form-text text-muted mb-4">Select item type </small>
 
               <!-- culculate button -->
               <button class="btn btn-outline-primary con-cen" id="quickBtnC"> Culculate</button>
               <div class="payMonth" id="payMonth">
-                <h5 class="pt-3">Preliminary monthly installment:</h5>
+                <h5 class="pt-3">Monthly payments:</h5>
                 <h5 id="displayC"></h5>
               </div>
             </form>

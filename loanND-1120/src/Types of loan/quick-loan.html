@@ -20,8 +20,8 @@
         <nav class="nav">
           <a href="../../index.html">Main</a>
           <a href="quick-loan.html" class="active">Quick loan</a>
-          <a href="housing-loan.html">Housing loan</a>
-          <a href="consumption-loan.html">Consumption loan</a>
+          <a href="house-loan.html">House loan</a>
+          <a href="consumer-loan.html">Consumer loan</a>
         </nav>
       </header>
     </div>
@@ -29,16 +29,14 @@
       <div class="row justify-content-md-center">
         <div class="col-md-5 mr-2 loan-discription">
           <h1>Quick loan</h1>
+          <hr>
           <ul>
             <li>Interest - 20% ;</li>
             <li>Loan up to 5 000 € ;</li>
             <li>Loan term up to 24 month ;</li>
             <li>For Your small dreams to come true!</li>
           </ul>
-          <p>Pavyzdžiui, skolinantis 2000 Eur, kai sudaroma 72 mėn. sutartis, fiksuota metinė palūkanų norma - 7%,
-            mėnesinis administravimo mokestis – 7 Eur, sutarties sudarymo mokestis – 7% (finansuojamas sutarties
-            sudarymo dieną ir grąžinamas lygiomis dalimis per visą sutarties galiojimo laikotarpį), mėnesio įmoka –
-            43,04 Eur, bendra sumokama suma – 3099,06 Eur, bendra vartojimo kredito kainos metinė norma – 16,87%.</p>
+          <p>For example, if Your loan is 1200 Euros, for 6 month term, then Your monthly payment would be 240 Euros.</p>
 
         </div>
         <div class="col-md-5">
@@ -46,19 +44,20 @@
             <form id="myForm">
               <div class="form-group">
                 <label for="loanAmount" class="loanLabel">Loan amount</label>
-                <input type="number" class="form-control" id="loanAmount" aria-describedby="emailHelp" autofocus value="1200">
+                <input type="number" class="form-control" id="loanAmount" aria-describedby="emailHelp" autofocus value="1200"
+                  max="5000" maxlength="5000">
                 <!-- <div id="valueToBig" class="toBig"></div> -->
                 <small id="loanHelp" class="form-text text-muted ">Up to 5000 €</small>
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1" class="loanLabel">Loan term</label>
-                <input type="number" class="form-control" id="loanTerm" value="12">
+                <input type="number" class="form-control" id="loanTerm" value="6">
                 <!-- <div id="termToBig" class="toBig"></div> -->
                 <small id="termHelp" class="form-text text-muted">Up to 24 month</small>
               </div>
               <button class="btn btn-outline-primary" id="quickBtn"> Culculate</button>
               <div class="payMonth" id="payMonth">
-                <h5 class="pt-3">Preliminary monthly installment:</h5>
+                <h5 class="pt-3">Monthly payments:</h5>
                 <h5 id="display"></h5>
               </div>
             </form>

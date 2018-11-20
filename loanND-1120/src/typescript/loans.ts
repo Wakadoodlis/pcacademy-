@@ -1,53 +1,68 @@
 import QuickLoan from "../loan Classes/quickLoan";
 import Houseloan from "../loan Classes/housingLoan";
-// import ConsumptionLoan from "../loan Classes/consumLoan";
+import ConsumptLoan from "../loan Classes/consumLoan";
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=
 // =-=-=-=-=-=-=-=-=  QUICK LOAN  -=-=-=-=-=-=-=-=-=-
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // let button = document.getElementById("quickBtn");
 // let quickLoan = new QuickLoan();
-
-let button = document.getElementById("quickBtn");
-button.onclick = function(e) {
-  let quickLoan = new QuickLoan(
-    parseInt((<HTMLInputElement>document.getElementById("loanAmount")).value),
-    parseInt((<HTMLInputElement>document.getElementById("loanTerm")).value)
-  );
-  e.preventDefault();
-  document.getElementById(
-    "display"
-  ).innerHTML = `${quickLoan.calculate()} €/month`;
-};
+window.addEventListener("load", function() {
+  let button = document.getElementById("quickBtn");
+  button.onclick = function(q) {
+    let quickLoan = new QuickLoan(
+      parseInt((<HTMLInputElement>document.getElementById("loanAmount")).value),
+      parseInt((<HTMLInputElement>document.getElementById("loanTerm")).value)
+    );
+    q.preventDefault();
+    document.getElementById(
+      "display"
+    ).innerHTML = `${quickLoan.calculate()} €/month`;
+  };
+});
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=
 // =-=-=-=-=-=-=-=-=  home LOAN  -=-=-=-=-=-=-=-=-=-
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-let buttonh = document.getElementById("quickBtnH");
-buttonh.onclick = function(a) {
-  let houseloan = new Houseloan(
-    parseInt((<HTMLInputElement>document.getElementById("salaryH")).value),
-    parseInt((<HTMLInputElement>document.getElementById("loanTermH")).value)
-  );
-  a.preventDefault();
-  document.getElementById(
-    "displayH"
-  ).innerHTML = `${houseloan.calculate()} €/month`;
-};
-// housingLoan.getLoanAmount();
-// buttonh.onclick = function(e) {
-//   e.preventDefault();
-//   alert("housing ");
-// };
+// let buttonh = document.getElementById("quickBtnH");
+window.addEventListener("load", function() {
+  let buttonh = document.getElementById("quickBtnH");
+  buttonh.onclick = function(h) {
+    let houseloan = new Houseloan(
+      parseInt((<HTMLInputElement>document.getElementById("salaryH")).value),
+      parseInt((<HTMLInputElement>document.getElementById("loanTermH")).value),
+      parseInt(
+        (<HTMLInputElement>document.getElementById("loanAmountH")).value
+      ),
+      parseInt((<HTMLInputElement>document.getElementById("childrenH")).value)
+    );
+    h.preventDefault();
+    document.getElementById(
+      "displayH"
+    ).innerHTML = `${houseloan.calculate()} €`;
+    document.getElementById(
+      "monthlyh"
+    ).innerHTML = `${houseloan.payMonth()} €/month`;
+  };
+});
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=
 // =-=-=-=-=-=-=-=-=  consumption LOAN  -=-=-=-=-=-=-=-=-=-
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-// let buttonc = document.getElementById("quickBtnC");
-// console.log(buttonc);
-// let consumptionLoan = new ConsumptionLoan();
-// buttonc.onclick = function(c) {
-//   c.preventDefault();
-//   alert("consum");
-// };
+
+window.addEventListener("load", function() {
+  let buttonc = document.getElementById("quickBtnC");
+  buttonc.onclick = function(c) {
+    let consumptLoan = new ConsumptLoan(
+      parseInt(
+        (<HTMLInputElement>document.getElementById("loanAmountC")).value
+      ),
+      parseInt((<HTMLInputElement>document.getElementById("loanTermC")).value)
+    );
+    c.preventDefault();
+    document.getElementById(
+      "displayC"
+    ).innerHTML = `${consumptLoan.calculate()} € /month`;
+  };
+});

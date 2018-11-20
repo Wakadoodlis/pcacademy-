@@ -41,6 +41,12 @@
 
 }
 
+.loans-wraper a p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
 .nav {
   padding: 55px;
   height: 110px;
@@ -54,7 +60,6 @@
   text-align: center;
   padding-top: 2rem;
 }
-
 
 /* 
 -=-==-=-==-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=
@@ -86,7 +91,7 @@
 .loanWraper,
 .wraper {
   color: #003C5A;
-  height: 710px;
+  height: 680px;
 }
 
 .loan-discription h1 {
@@ -168,7 +173,9 @@ button#quickBtnC.btn.btn-outline-primary {
   font-weight: 500;
 }
 
-button#quickBtn.btn.btn-outline-primary:hover {
+button#quickBtn.btn.btn-outline-primary:hover,
+button#quickBtnH.btn.btn-outline-primary:hover,
+button#quickBtnC.btn.btn-outline-primary:hover {
   color: #fff;
   background-color: #a7cb58;
 }
@@ -186,7 +193,7 @@ button#quickBtn.btn.btn-outline-primary:hover {
 
 .house-form {
   width: 350px;
-  height: 680px;
+  height: 620px;
 
 }
 
@@ -201,8 +208,10 @@ input#childrenH.form-control.bg {
 
 button#quickBtnH.btn.btn-outline-primary.cent {
   margin-left: 7rem;
+  margin-bottom: 1rem;
 
 }
+
 
 /* 
 -=-==-=-==-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=
@@ -220,6 +229,13 @@ button#quickBtnH.btn.btn-outline-primary.cent {
 
 }
 
+input#loanAmountC.form-control.bg,
+input#loanTermC.form-control.bg {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
 button#quickBtnC.btn.btn-outline-primary.con-cen {
   margin-left: 6rem;
 
@@ -230,4 +246,16 @@ button#quickBtnC.btn.btn-outline-primary.con-cen {
   border: 1px solid #ced4da;
   margin-left: 2.6rem;
   background-color: #fff;
+}
+
+/*  footer */
+footer {
+  text-align: center;
+  height: 50px;
+  background-image: linear-gradient(to top right, #a7cb58, #57c7ec, #9cbae8, #03d0cf, #a7cb58);
+}
+
+footer p {
+  padding-top: .7rem;
+  font-size: .7rem;
 }
