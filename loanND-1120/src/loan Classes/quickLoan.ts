@@ -1,12 +1,26 @@
-// import Loans from "../abstract Class/Loan";
+import Loans from "../interface/Loan";
+
+export default class QuickLoan implements Loans {
+  private lValue: number;
+  private lTerm: number;
+
+  constructor(lValue, lTerm) {
+    this.lValue = lValue;
+    this.lTerm = lTerm;
+  }
+
+  calculate(): number {
+    // interest always 20 %
+    const interest = 1.2;
+    // counting maximum loan
+    let monthPayment = (this.lValue * interest) / this.lTerm;
+    return monthPayment;
+  }
+}
 
 // export default class QuickLoan extends Loans {
-//   lValue = parseInt(
-//     (<HTMLInputElement>document.getElementById("loanAmount")).value
-//   );
-//   lTerm = parseInt(
-//     (<HTMLInputElement>document.getElementById("loanTerm")).value
-//   );
+//   lValue = parseInt((<HTMLInputElement>document.getElementById("loanAmount")).value);
+//   lTerm = parseInt((<HTMLInputElement>document.getElementById("loanTerm")).value);
 //   lInterest = 1.2;
 //   maxValue = 5000;
 //   maxTerm = 24;

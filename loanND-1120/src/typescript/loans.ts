@@ -1,4 +1,4 @@
-// import QuickLoan from "../loan Classes/quickLoan";
+import QuickLoan from "../loan Classes/quickLoan";
 import Houseloan from "../loan Classes/housingLoan";
 // import ConsumptionLoan from "../loan Classes/consumLoan";
 
@@ -8,14 +8,17 @@ import Houseloan from "../loan Classes/housingLoan";
 // let button = document.getElementById("quickBtn");
 // let quickLoan = new QuickLoan();
 
-// let button = document.getElementById("quickBtn");
-// button.onclick = function(e) {
-//   e.preventDefault();
-//   quickLoan.getAmount();
-//   quickLoan.checkFields();
-// };
-// quickLoan.getAmount();
-// quickLoan.checkFields();
+let button = document.getElementById("quickBtn");
+button.onclick = function(e) {
+  let quickLoan = new QuickLoan(
+    parseInt((<HTMLInputElement>document.getElementById("loanAmount")).value),
+    parseInt((<HTMLInputElement>document.getElementById("loanTerm")).value)
+  );
+  e.preventDefault();
+  document.getElementById(
+    "display"
+  ).innerHTML = `${quickLoan.calculate()} €/month`;
+};
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=
 // =-=-=-=-=-=-=-=-=  home LOAN  -=-=-=-=-=-=-=-=-=-

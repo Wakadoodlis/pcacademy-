@@ -1,4 +1,4 @@
-import Loans from "../abstract Class/Loan";
+import Loans from "../interface/Loan";
 
 export default class Houseloan implements Loans {
   private pSalary: number;
