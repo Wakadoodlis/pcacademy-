@@ -18,7 +18,7 @@ export default class Houseloan implements Loans {
     let monthPay = (this.lAmount * interest) / (this.lTerm * 12);
     return parseInt(monthPay.toFixed(2));
   }
-
+  // culculating max loan amount
   calculate(): number {
     let termInMonth = this.lTerm * 12;
 
