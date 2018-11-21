@@ -1,5 +1,4 @@
 import Loans from "../interface/Loan";
-// import basicLoan from "../abstr Class/abstrLoan";
 
 export default class Houseloan implements Loans {
   private pSalary: number;
@@ -13,22 +12,21 @@ export default class Houseloan implements Loans {
     this.lAmount = lAmount;
     this.pChildren = pChildren;
   }
+
   payMonth(): number {
+    const months = 12;
     let interest = 1.02;
-    let monthPay = (this.lAmount * interest) / (this.lTerm * 12);
+    let monthPay = (this.lAmount * interest) / (this.lTerm * months);
     return parseInt(monthPay.toFixed(2));
   }
-  // culculating max loan amount
   calculate(): number {
-    let termInMonth = this.lTerm * 12;
-
-    const minSalery = 400 + this.pChildren * 100;
+    const months = 12;
+    let termInMonth = this.lTerm * months;
+    const childrenMoney = 100;
+    const minSalery = 400 + this.pChildren * childrenMoney;
     const maxTerm = 30;
-
-    // counting maximum loan
     let maxPayment = this.pSalary - minSalery;
     let maxAmount = maxPayment * termInMonth;
-    // checkink if term is not exceeding max term
     if (this.lTerm <= maxTerm) {
       return maxAmount;
     } else {
