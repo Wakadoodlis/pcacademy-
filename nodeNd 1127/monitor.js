@@ -1,6 +1,5 @@
 // Monitoring pc ress in half a sec
 const cpuGpuUsage = require("./pcRess");
-// Paleidus skriptą monitor.js terminale kas puse sekundės vaizduoti kompiuterio resursus (Jie turi automatiškai atsinaujinti).
 
 setInterval(function() {
   var time = 0;
