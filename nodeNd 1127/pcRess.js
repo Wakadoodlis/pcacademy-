@@ -1,4 +1,3 @@
-// Nuskaityti kompiuterio resursus (naudojama CPU, RAM procentais) ir atvaizduoti terminale.
 const os = require("os-utils");
 
 var cpuGpuUsage = function() {
@@ -9,5 +8,5 @@ var cpuGpuUsage = function() {
     return console.log(` Cpu usage ${ress} % and GPU: ${useMem} %`);
   });
 };
-
+cpuGpuUsage();
 module.exports = cpuGpuUsage;
