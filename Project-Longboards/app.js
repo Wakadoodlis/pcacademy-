@@ -18,7 +18,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/places", place);
+app.use("/", place);
 
 app.listen(CONFIG.PORT, () => {
   console.log("server started succesfully!");

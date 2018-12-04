@@ -2,12 +2,12 @@ const Place = require("../models/place");
 
 exports.create = function(request, response) {
   let place = new Place({
-    title: request.body.title
+    title: request.body.title,
     // title: "kauno kazkas",
     // adress: "kaunas",
     // track_length: 3
     // adress: request.body.adress,
-    // track_length: request.body.length,
+    track_length: request.body.track
     // map_url: equest.body.mapUrl,
     // img_url: equest.body.imgUrl
   });
@@ -19,7 +19,43 @@ exports.create = function(request, response) {
 
 exports.get = function(request, response) {
   Place.find((err, places) => {
+    if (err) {
+      throw err;
+    }
     response.send(places);
+  });
+};
+
+exports.getById = function(request, response) {
+  Place.findById(request.params._id, (err, place) => {
+    if (err) {
+      throw err;
+    }
+    response.send(place);
+  });
+};
+
+exports.updatePlace = function(request, response) {
+  const query = { _id: request.params._id };
+  Place.findOneAndUpdate(
+    query,
+    request.body,
+    { upsert: true },
+    (err, place) => {
+      if (err) {
+        throw err;
+      }
+      response.send(place);
+    }
+  );
+};
+exports.deletePlace = function(request, response) {
+  const query = { _id: request.params._id };
+  Place.findOneAndDelete(query, (err, place) => {
+    if (err) {
+      throw err;
+    }
+    response.send(place);
   });
 };
 
