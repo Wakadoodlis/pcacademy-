@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const place = require("./routes/place");
 
+// connecting to DB
 mongoose.connect(CONFIG.CONNECTION_STRING);
 mongoose.Promise = global.Promise;
 mongoose.connection

@@ -3,6 +3,7 @@ const placeController = require("../controllers/place");
 
 const router = express.Router();
 
+// Routes
 router.post("/new", placeController.create);
 router.get("/places", placeController.get);
 router.get("/places/:_id", placeController.getById);
