@@ -3,6 +3,8 @@ const CONFIG = require("./config");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const place = require("./routes/place");
+// const placeRoute = require("./routes/place");
+// const userRout = require("./routes/user");
 
 // connecting to DB
 mongoose.connect(CONFIG.CONNECTION_STRING);
@@ -19,7 +21,9 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/", place);
+app.use("/places", place);
+// app.use("/places", placeRoute);
+// app.use("/users", userRoute);
 
 app.listen(CONFIG.PORT, () => {
   console.log("server started succesfully!");
