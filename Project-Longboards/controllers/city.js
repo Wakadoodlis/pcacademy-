@@ -15,27 +15,7 @@ exports.create = async function(request, response, next) {
 
 exports.get = async function(request, response) {
   try {
-    let cities = await City.find();
-    response.send(cities);
-  } catch (error) {
-    next(boom.badData(error));
-  }
-};
-
-exports.getById = async function(request, response, next) {
-  try {
-    const query = { _id: request.params._id };
-    let cities = await City.findById(query);
-    response.send(cities);
-  } catch (error) {
-    next(boom.badData(error));
-  }
-};
-
-exports.updateCity = async function(request, response, next) {
-  try {
-    const query = { _id: request.params._id };
-    let cities = await City.findByIdAndUpdate(query, request.body);
+    let cities = await City.find().populate("places");
     response.send(cities);
   } catch (error) {
     next(boom.badData(error));
