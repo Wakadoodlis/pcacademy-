@@ -4,7 +4,9 @@
   "description": "LONGBOARD web app grants You a chance to fnd best places for longboard. Alose organise a meetup, or add new places. ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "debug": "nodemon --inspect app.js"
   },
   "author": "Martynas Urbonas",
   "license": "ISC",

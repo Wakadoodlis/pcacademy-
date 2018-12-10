@@ -2,7 +2,9 @@ const express = require("express");
 const CONFIG = require("./config");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const place = require("./routes/place");
+const placeRoute = require("./routes/place");
+const cityRoute = require("./routes/city");
+const errorHandler = require("./errorHandler");
 // const placeRoute = require("./routes/place");
 // const userRout = require("./routes/user");
 
@@ -21,7 +23,9 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/places", place);
+app.use(errorHandler);
+app.use("/places", placeRoute);
+app.use("/city", cityRoute);
 // app.use("/places", placeRoute);
 // app.use("/users", userRoute);
 
