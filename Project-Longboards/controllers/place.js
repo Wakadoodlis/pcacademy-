@@ -8,7 +8,8 @@ exports.create = async function(request, response, next) {
       title: request.body.title,
       distance: request.body.distance,
       condition: request.body.condition,
-      people: request.body.people
+      people: request.body.people,
+      city: request.body.city
     });
     let result = await place.save();
     response.send(result);
@@ -19,7 +20,7 @@ exports.create = async function(request, response, next) {
 
 exports.get = async function(request, response) {
   try {
-    let places = await Place.find();
+    let places = await Place.find().populate("city");
     response.send(places);
   } catch (error) {
     next(boom.badData(error));
