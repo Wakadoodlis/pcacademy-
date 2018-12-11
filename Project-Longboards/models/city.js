@@ -9,4 +9,4 @@ let CitySchema = new Schema(
   { toJSON: { virtuals: true } }
 );
 
-module.exports = mongoose.model("Place", CitySchema);
+module.exports = mongoose.model("City", CitySchema);
