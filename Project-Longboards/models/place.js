@@ -15,10 +15,4 @@ let PlaceSchema = new Schema(
   { toJSON: { virtuals: true } }
 );
 
-// PlaceSchema.virtual('students', {
-//   ref: 'Student',
-//   localField: '_id',
-//   foreignField: 'lector'
-// })
-
 module.exports = mongoose.model("Place", PlaceSchema);

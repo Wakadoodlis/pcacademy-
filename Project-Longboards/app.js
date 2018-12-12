@@ -10,16 +10,20 @@ const passport = require("passport");
 require("./authentication/jwtStrategy");
 require("./authentication/localStrategy");
 
-// connecting to DB
-mongoose.connect(CONFIG.CONNECTION_STRING);
+if (process.env.NODE_ENV && process.env.NODE_ENV === "test") {
+  mongoose.connect(CONFIG.CONNECTION_STRING_TEST);
+} else {
+  mongoose.connect(CONFIG.CONNECTION_STRING);
+  mongoose.connection
+    .once("open", () => {
+      console.log("connection has been made!");
+    })
+    .on("err", err => {
+      console.log("connection error: ", err);
+    });
+}
+
 mongoose.Promise = global.Promise;
-mongoose.connection
-  .once("open", () => {
-    console.log("connection has been made!");
-  })
-  .on("err", err => {
-    console.log("connection error: ", err);
-  });
 
 const app = express();
 
