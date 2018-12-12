@@ -55,13 +55,9 @@ describe("City", () => {
     it("it should delete city", done => {
       chai
         .request(app)
-        .delete("/city/")
-        .send({
-          _id: "5c08133ad835983e30d08761"
-        })
+        .delete("/city/5c08133ad835983e30d08761")
         .end((error, response) => {
           response.should.have.status(200);
-          response.body.should.be.a("object");
           done();
         });
     });
