@@ -10,7 +10,7 @@ chai.should();
 chai.use(chaiHtpp);
 
 describe("City", () => {
-  beforeEach(done => {
+  before(done => {
     CityModel.remove({}, err => {
       done();
     });
@@ -53,13 +53,17 @@ describe("City", () => {
 
   describe("/DELETE", () => {
     it("it should delete city", done => {
-      chai
-        .request(app)
-        .delete("/city/5c08133ad835983e30d08761")
-        .end((error, response) => {
-          response.should.have.status(200);
-          done();
-        });
+      CityModel.findOne({}, (error, city) => {
+        console.log("city", city);
+        chai
+          .request(app)
+          .delete("/city/" + city._id)
+          .set("wakaton", CONFIG.TOKEN_TEST)
+          .end((error, response) => {
+            response.should.have.status(200);
+            done();
+          });
+      });
     });
   });
 });

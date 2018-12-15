@@ -4,15 +4,14 @@ const chai = require("chai");
 const chaiHtpp = require("chai-http");
 const app = require("../app");
 const CONFIG = require("../config");
-const Place = require("../models/place");
-
+const PlaceModel = require("../models/place");
 
 chai.should();
 chai.use(chaiHtpp);
 
 describe("place", () => {
-  beforeEach(done => {
-    Place.remove({}, err => {
+  before(done => {
+    PlaceModel.remove({}, err => {
       done();
     });
   });
@@ -74,7 +73,7 @@ describe("place", () => {
 
   describe("/GET/:id place", () => {
     it("it should GET a place by the given id", done => {
-      let place = new Place({
+      let place = new PlaceModel({
         title: "Karžygių kelias",
         distance: 12,
         condition: "Labai gera. Neseniai įrengtas parkas",
@@ -105,31 +104,47 @@ describe("place", () => {
     });
   });
 
-  describe("/DELETE/:id place", () => {
-    it("it should DELETE a place given the id", done => {
-      let place = new Place({
-        title: "Karžygių kelias",
-        distance: 12,
-        condition: "Labai gera. Neseniai įrengtas parkas",
-        people: "Žmonių daug. Dažnai su vaikais",
-        city: "",
-        id: "5c0ffe24b7014e344c879131"
-      });
-      place.save((err, place) => {
+  describe("/DELETE", () => {
+    it("it should delete city", done => {
+      PlaceModel.findOne({}, (error, place) => {
+        console.log("place", place);
         chai
           .request(app)
-          .delete("/places/5c0ffe24b7014e344c879131")
-          .end((err, res) => {
-            res.should.have.status(200);
+          .delete("/places/" + place._id)
+          .set("wakaton", CONFIG.TOKEN_TEST)
+          .end((error, response) => {
+            response.should.have.status(200);
             done();
           });
       });
     });
   });
 
+  // describe("/DELETE/:id place", () => {
+  //   it("it should DELETE a place given the id", done => {
+  //     let place = new Place({
+  //       title: "Karžygių kelias",
+  //       distance: 12,
+  //       condition: "Labai gera. Neseniai įrengtas parkas",
+  //       people: "Žmonių daug. Dažnai su vaikais",
+  //       city: "",
+  //       id: "5c0ffe24b7014e344c879131"
+  //     });
+  //     place.save((err, place) => {
+  //       chai
+  //         .request(app)
+  //         .delete("/places/5c0ffe24b7014e344c879131")
+  //         .end((err, res) => {
+  //           res.should.have.status(200);
+  //           done();
+  //         });
+  //     });
+  //   });
+  // });
+
   describe("/PUT/:id place", () => {
     it("it should UPDATE a place by the given id", done => {
-      let place = new Place({
+      let place = new PlaceModel({
         title: "Karžygių kelias",
         distance: 12,
         condition: "Labai gera",
