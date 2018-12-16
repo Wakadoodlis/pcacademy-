@@ -103,23 +103,6 @@ describe("place", () => {
   //     });
   //   });
   // });
-
-  describe("/DELETE", () => {
-    it("it should delete city", done => {
-      PlaceModel.findOne({}, (error, place) => {
-        console.log("place", place);
-        chai
-          .request(app)
-          .delete("/places/" + place._id)
-          .set("wakaton", CONFIG.TOKEN_TEST)
-          .end((error, response) => {
-            response.should.have.status(200);
-            done();
-          });
-      });
-    });
-  });
-
   describe("/GET:_id", () => {
     it("it should get place by id", done => {
       PlaceModel.findOne({}, (error, place) => {
@@ -145,12 +128,29 @@ describe("place", () => {
           .put("/places/" + place._id)
           .set("wakaton", CONFIG.TOKEN_TEST)
           .send({
-            title: "bla bla"
+            title: "Naujas Title"
           })
           .end((error, response) => {
             response.should.have.status(200);
+            console.log("place", place);
             done();
           });
+      });
+    });
+
+    describe("/DELETE", () => {
+      it("it should delete city", done => {
+        PlaceModel.findOne({}, (error, place) => {
+          console.log("place", place);
+          chai
+            .request(app)
+            .delete("/places/" + place._id)
+            .set("wakaton", CONFIG.TOKEN_TEST)
+            .end((error, response) => {
+              response.should.have.status(200);
+              done();
+            });
+        });
       });
     });
   });
