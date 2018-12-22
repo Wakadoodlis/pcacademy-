@@ -21,9 +21,8 @@ export default class LoginPage extends React.PureComponent {
         <NavBar />
         <h1> Cia yra LoginPage </h1>
         <form action="">
-          <label htmlFor="">el. pastas</label>
           <input type="text" />
-          <label htmlFor="">slaptazodis</label>
+          <input type="text" />
           <input type="text" />
           <button type="button">Login</button>
         </form>
