@@ -11,6 +11,8 @@
 
 import React from 'react';
 import NavBar from '../../components/Navbar/Navbar';
+import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css/dist/js/materialize.min.js';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class SignupPage extends React.PureComponent {
@@ -19,6 +21,14 @@ export default class SignupPage extends React.PureComponent {
       <div>
         <NavBar />
         <h1> Cia yra SignupPage </h1>
+        <div>
+          <form action="">
+            <label htmlFor="">vardas</label>
+            <input type="text" />
+            <label htmlFor="">el. pastas</label>
+            <input type="text" />
+          </form>
+        </div>
       </div>
     );
   }
