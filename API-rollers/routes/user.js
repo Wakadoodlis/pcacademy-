@@ -11,4 +11,9 @@ router.post(
 
 router.post("/login", userController.login);
 
+router.post(
+  "/user/google",
+  passport.authenticate("googleToken", { session: false })
+);
+
 module.exports = router;

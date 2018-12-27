@@ -7,6 +7,7 @@ const cityRoute = require("./routes/city");
 const errorHandler = require("./errorHandler");
 const userRoute = require("./routes/user");
 const passport = require("passport");
+const facebookPassport = require("passport-facebook");
 require("./authentication/jwtStrategy");
 require("./authentication/localStrategy");
 
