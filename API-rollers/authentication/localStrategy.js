@@ -12,7 +12,14 @@ const signUpStrategy = new LocalStrategy(
 
 async function createUser(email, password, done) {
   try {
-    const user = await UserModel.create({ email, password });
+    const user = new UserModel({
+      method: "local",
+      local: {
+        email: email,
+        password: password
+      }
+    });
+    await user.save();
     done(null, user);
   } catch (error) {
     done(error);
