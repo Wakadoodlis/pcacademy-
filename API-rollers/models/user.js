@@ -4,19 +4,55 @@ const bcrypt = require("bcrypt");
 const Schema = mongoose.Schema;
 
 let UserSchema = new Schema({
-  email: { type: String, required: true, unique: true },
-  password: { type: String, required: true }
+  method: {
+    type: String,
+    enum: ["local", "google", "facebook"],
+    required: true
+  },
+  local: {
+    email: { type: String },
+    password: { type: String }
+  },
+  google: {
+    id: {
+      type: String
+    },
+    email: {
+      type: String,
+      lowercase: true
+    }
+  },
+  facebook: {
+    id: {
+      type: String
+    },
+    email: {
+      type: String,
+      lowercase: true
+    }
+  }
 });
 
 UserSchema.pre("save", createHashedPassword);
 
 async function createHashedPassword(next) {
-  this.password = await bcrypt.hash(this.password, 10);
-  next();
+  try {
+    if (this.method !== "local") {
+      next();
+    }
+    this.local.password = await bcrypt.hash(this.password, 10);
+    next();
+  } catch (error) {
+    next(error);
+  }
 }
 
 UserSchema.methods.isValidPassword = async function(password) {
-  return await bcrypt.compare(password, this.password);
+  try {
+    return await bcrypt.compare(password, this.local.password);
+  } catch (error) {
+    throw new Error(error);
+  }
 };
 
 module.exports = mongoose.model("User", UserSchema);

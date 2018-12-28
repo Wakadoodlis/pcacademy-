@@ -29,7 +29,7 @@ loginStrategy = new LocalStrategy(
 
 async function loginUser(email, password, done) {
   try {
-    const user = await UserModel.findOne({ email });
+    const user = await UserModel.findOne({ "local.email": email });
     if (!user) {
       done(null, false, { message: "User not found" });
     }
