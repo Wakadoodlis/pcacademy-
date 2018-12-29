@@ -1,36 +1,35 @@
 const passport = require("passport");
 const CONFIG = require("../config");
-const GooglePlusTokenStrategy = require("passport-google-plus-token");
+const FacebookTokenStrategy = require("passport-facebook-token");
 const UserModel = require("../models/user");
 
 passport.use(
-  "googleToken",
-  new GooglePlusTokenStrategy(
+  "facebookToken",
+  new FacebookTokenStrategy(
     {
-      clientID: CONFIG.OAUTH.GOOGLE.clientID,
-      clientSecret: CONFIG.OAUTH.GOOGLE.clientSecret
+      clientID: CONFIG.OAUTH.FACEBOOK.clientID,
+      clientSecret: CONFIG.OAUTH.FACEBOOK.clientSecret
     },
-    async (accesToken, refreshToken, profile, done) => {
+    async (accessToken, refreshToken, profile, done) => {
       try {
         console.log("profile", profile);
-        console.log("accessToken", accesToken);
+        console.log("accessToken", accessToken);
         console.log("refreshToken", refreshToken);
 
         const existingUser = await UserModel.findOne({
-          "google.id": profile.id
+          "facebook.id": profile.id
         });
         if (existingUser) {
-          return done(null, existingUser, {
-            message: "This user is already in DB"
-          });
+          return done(null, existingUser);
         }
         const newUser = new UserModel({
-          method: "google",
-          google: {
+          method: "facebook",
+          facebook: {
             id: profile.id,
             email: profile.emails[0].value
           }
         });
+
         await newUser.save();
         done(null, newUser);
       } catch (error) {

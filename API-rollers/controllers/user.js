@@ -5,7 +5,7 @@ const CONFIG = require("../config");
 signToken = user => {
   return jwt.sign(
     {
-      iss: "CodeWorkr",
+      iss: "Marrr",
       sub: user.id,
       iat: new Date().getTime(), // current time
       exp: new Date().setDate(new Date().getDate() + 1) // current time + 1 day ahead
@@ -43,6 +43,15 @@ exports.login = async function(request, response) {
 };
 
 exports.googleOAuth = async function(req, res, next) {
+  try {
+    const token = signToken(req.user);
+    res.status(200).json({ token });
+  } catch (error) {
+    next(error, false, error.message);
+  }
+};
+
+exports.facebookOAuth = async function(req, res, next) {
   try {
     const token = signToken(req.user);
     res.status(200).json({ token });
