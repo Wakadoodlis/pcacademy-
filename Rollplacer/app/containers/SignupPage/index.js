@@ -21,7 +21,7 @@ export default class SignupPage extends React.PureComponent {
       <div>
         <NavBar />
         <h1> Cia yra SignupPage </h1>
-        <div>
+        <div className="container">
           <form action="">
             <label htmlFor="">vardas</label>
             <input type="text" />
