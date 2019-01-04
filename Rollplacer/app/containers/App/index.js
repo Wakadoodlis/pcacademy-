@@ -11,9 +11,9 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
-import ContactPage from 'containers/ContactPage/';
-import SignupPage from 'containers/SignupPage/';
-import LoginPage from 'containers/LoginPage/';
+import ContactPage from 'containers/ContactPage/Loadable';
+import SignupPage from 'containers/SignupPage/Loadable';
+import LoginPage from 'containers/LoginPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
 export default function App() {
