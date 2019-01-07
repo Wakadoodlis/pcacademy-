@@ -13,6 +13,8 @@ import React from 'react';
 import NavBar from '../../components/Navbar/Navbar';
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize.min.js';
+import { Link } from 'react-dom';
+import style from './style.css';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class SignupPage extends React.PureComponent {
@@ -20,14 +22,40 @@ export default class SignupPage extends React.PureComponent {
     return (
       <div>
         <NavBar />
-        <h1> Cia yra SignupPage </h1>
         <div className="container">
-          <form action="">
-            <label htmlFor="">vardas</label>
-            <input type="text" />
-            <label htmlFor="">el. pastas</label>
-            <input type="text" />
-          </form>
+          <h5>
+            {' '}
+            Žinai puikių vietų ne tik savo, bet ir kitame mieste? - prisijunk,
+            įkelk, pakviesk kitus, riedėk ne vienas!
+          </h5>
+          <div className="divider" />
+          <br />
+          <br />
+          <div className="row">
+            <div className="col s5">
+              <form action="">
+                <label htmlFor="name">vardas</label>
+                <input type="text" name="name" />
+                <label htmlFor="email">el. pastas</label>
+                <input type="text" name="email" />
+                <button type="button" className={style.btnReg}>
+                  Registruotis
+                </button>
+              </form>
+            </div>
+            <div className="col s1"> arba</div>
+            <div className="col s5">
+              <button type="button" className={style.btnRegFb}>
+                <span className={style.spanFb}>f</span> Registruotis su Facebook
+              </button>
+              <button type="button" className={style.btnRegGplus}>
+                <span className={style.spanG}>
+                  G <span className={style.gPlus}>+</span>
+                </span>
+                Registruotis su Google
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     );

@@ -16,8 +16,12 @@ import NavBar from '../../components/Navbar/Navbar';
 /* eslint-disable react/prefer-stateless-function */
 export default class PlacesPage extends React.PureComponent {
   componentDidMount() {
+    // axios
+    //   .get('http://localhost:1234/places')
+    //   .then(res => console.log(res.data));
+
     axios
-      .get('http://localhost:1234/places')
+      .get('https://jsonplaceholder.typicode.com/users')
       .then(res => console.log(res.data));
   }
 
