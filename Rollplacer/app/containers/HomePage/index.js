@@ -12,6 +12,7 @@
 import React from 'react';
 import NavBar from '../../components/Navbar/Navbar';
 import HeroVid from '../../components/HeroVid/HeroVid';
+// import SignupDialog from '../../components/signupDialog/SignupDialog';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class HomePage extends React.PureComponent {
@@ -19,6 +20,7 @@ export default class HomePage extends React.PureComponent {
     return (
       <div>
         <NavBar />
+
         <HeroVid />
       </div>
     );

@@ -1,5 +1,5 @@
 /*
- * LoginPage
+ * SignupPage
  *
  * This is the first thing users see of our App, at the '/' route
  *
@@ -13,20 +13,47 @@ import React from 'react';
 import NavBar from '../../components/Navbar/Navbar';
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize.min.js';
+import { Link } from 'react-dom';
+import style from './style.css';
+import SocialButtons from '../../components/SocialButtons/SocialButtons';
+
 /* eslint-disable react/prefer-stateless-function */
-export default class LoginPage extends React.PureComponent {
+export default class SignupPage extends React.PureComponent {
   render() {
     return (
       <div>
         <NavBar />
-        <h1> Cia yra LoginPage </h1>
-        <form action="">
-          <label htmlFor="">el. pastas</label>
-          <input type="text" />
-          <label htmlFor="">slaptazodis</label>
-          <input type="text" />
-          <button type="button">Login</button>
-        </form>
+        <div className="container">
+          <div className="divider" />
+          <br />
+          <br />
+          <div className={style.formWrap}>
+            <h4 className={style.mainHeader}>Prisijunk!</h4>
+            <p>
+              Dar neregistruotas narys? <a href="/signup">Sign up!</a>{' '}
+            </p>
+            <div className="divider" />
+            <SocialButtons />
+            <form action="">
+              <label htmlFor="email">El. pastas</label>
+              <input type="text" name="email" />
+              <label htmlFor="password">Slaptažodis</label>
+              <input
+                type="password"
+                name="password"
+                className={style.inputSignup}
+              />
+              <p>
+                {
+                  ' Jūsų duomenys nebus naudojami ar renkami komerciniais tikslais. Paspausdami "Registruotis" Jūs turėsite galimyne naudotis visomis tinklapyje veikiančiomis funkcijomis: "Įdėti naują vietą. ją redaguoti", "komentuoti kitas pridėtas vietas, jas vertinti", "organizuoti susitikimus", bei kt.. '
+                }
+              </p>
+              <button type="button" className={style.btnReg}>
+                Registruotis
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 /*
- * SignupPage
+ * LoginPage
  *
  * This is the first thing users see of our App, at the '/' route
  *
@@ -13,26 +13,22 @@ import React from 'react';
 import NavBar from '../../components/Navbar/Navbar';
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize.min.js';
-import { Link } from 'react-dom';
-import style from './style.css';
 import SocialButtons from '../../components/SocialButtons/SocialButtons';
 
+import style from './style.css';
+
 /* eslint-disable react/prefer-stateless-function */
-export default class SignupPage extends React.PureComponent {
+export default class LoginPage extends React.PureComponent {
   render() {
     return (
       <div>
         <NavBar />
         <div className="container">
-          <div className="divider" />
-          <br />
-          <br />
-          <div className={style.formWrap}>
-            <h4 className={style.mainHeader}>Prisijunk!</h4>
+          <div className={style.signupWraper}>
+            <h1> PRISIJUNK</h1>
             <SocialButtons />
+            <h4>arba prisijunk su el. pastu</h4>
             <form action="">
-              <label htmlFor="name">Vardas</label>
-              <input type="text" name="name" />
               <label htmlFor="email">El. pastas</label>
               <input type="text" name="email" />
               <label htmlFor="password">Slaptažodis</label>

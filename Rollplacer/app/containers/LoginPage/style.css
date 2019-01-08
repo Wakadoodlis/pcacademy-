@@ -1,0 +1,34 @@
+body {
+  background-color: #fafafa;
+}
+
+/* BUTTONS */
+.btnReg {
+  background-color: #f44336;
+  color: #fff;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+/* FORM WRAPPER */
+.formWrap {
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #fff;
+  margin-top: 3rem;
+}
+
+/* MAIN HEADER */
+.mainHeader {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* .inputSignup {
+  background: #fafafa;
+} */

@@ -1,0 +1,16 @@
+.btnDialog {
+  color: #fff !important;
+}
+
+.signupDialog {
+  width: 600px;
+  height: 500px;
+  padding: 2rem;
+}
+.textDialog {
+  color: grey;
+}
+
+.arba {
+  margin: 0 auto;
+}
