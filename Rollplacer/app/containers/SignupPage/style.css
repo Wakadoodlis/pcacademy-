@@ -1,3 +1,4 @@
+/* BUTTONS */
 .btnReg {
   background-color: #f44336;
   color: #fff;
@@ -8,43 +9,21 @@
   text-transform: uppercase;
 }
 
-.btnRegFb {
-  background-color: #4267b2;
-  color: #fff;
-  font-size: 1.2rem;
-  width: 100%;
-  height: 50px;
-  border-radius: 5px;
+/* FORM WRAPPER */
+.formWrap {
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* MAIN HEADER */
+.mainHeader {
   text-transform: uppercase;
-  align-content: flex-start;
-  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
-.btnRegGplus {
-  background-color: #d34836;
-  color: #fff;
-  font-size: 1.2rem;
-  width: 100%;
-  height: 50px;
-  border-radius: 5px;
-  text-transform: uppercase;
-}
-
-.spanFb {
-  text-transform: lowercase;
-  padding-right: 4rem;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.spanG {
-  padding-right: 2rem;
-  font-size: 2rem;
-  font-weight: 600;
-  position: relative;
-}
-.gPlus {
-  font-size: 1rem;
-  position: absolute;
-  top: 10px;
-}
+/* .inputSignup {
+  background: #fafafa;
+} */

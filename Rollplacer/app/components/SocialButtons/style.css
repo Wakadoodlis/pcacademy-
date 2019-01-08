@@ -1,0 +1,43 @@
+.btnRegFb {
+  background-color: #4267b2;
+  color: #fff;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  align-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.btnRegGplus {
+  background-color: #d34836;
+  color: #fff;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
+}
+
+/* SPAN INSIDE BTN */
+.spanFb {
+  text-transform: lowercase;
+  padding-right: 15px;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.spanG {
+  padding-right: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  position: relative;
+}
+.gPlus {
+  font-size: 1rem;
+  position: absolute;
+  top: 10px;
+  left: 21px;
+}

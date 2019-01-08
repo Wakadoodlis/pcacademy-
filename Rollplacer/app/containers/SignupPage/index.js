@@ -15,6 +15,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize.min.js';
 import { Link } from 'react-dom';
 import style from './style.css';
+import SocialButtons from '../../components/SocialButtons/SocialButtons';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class SignupPage extends React.PureComponent {
@@ -23,38 +24,32 @@ export default class SignupPage extends React.PureComponent {
       <div>
         <NavBar />
         <div className="container">
-          <h5>
-            {' '}
-            Žinai puikių vietų ne tik savo, bet ir kitame mieste? - prisijunk,
-            įkelk, pakviesk kitus, riedėk ne vienas!
-          </h5>
           <div className="divider" />
           <br />
           <br />
-          <div className="row">
-            <div className="col s5">
-              <form action="">
-                <label htmlFor="name">vardas</label>
-                <input type="text" name="name" />
-                <label htmlFor="email">el. pastas</label>
-                <input type="text" name="email" />
-                <button type="button" className={style.btnReg}>
-                  Registruotis
-                </button>
-              </form>
-            </div>
-            <div className="col s1"> arba</div>
-            <div className="col s5">
-              <button type="button" className={style.btnRegFb}>
-                <span className={style.spanFb}>f</span> Registruotis su Facebook
+          <div className={style.formWrap}>
+            <h4 className={style.mainHeader}>Prisijunk!</h4>
+            <SocialButtons />
+            <form action="">
+              <label htmlFor="name">Vardas</label>
+              <input type="text" name="name" />
+              <label htmlFor="email">El. pastas</label>
+              <input type="text" name="email" />
+              <label htmlFor="password">Slaptažodis</label>
+              <input
+                type="password"
+                name="password"
+                className={style.inputSignup}
+              />
+              <p>
+                {
+                  ' Jūsų duomenys nebus naudojami ar renkami komerciniais tikslais. Paspausdami "Registruotis" Jūs turėsite galimyne naudotis visomis tinklapyje veikiančiomis funkcijomis: "Įdėti naują vietą. ją redaguoti", "komentuoti kitas pridėtas vietas, jas vertinti", "organizuoti susitikimus", bei kt.. '
+                }
+              </p>
+              <button type="button" className={style.btnReg}>
+                Registruotis
               </button>
-              <button type="button" className={style.btnRegGplus}>
-                <span className={style.spanG}>
-                  G <span className={style.gPlus}>+</span>
-                </span>
-                Registruotis su Google
-              </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
