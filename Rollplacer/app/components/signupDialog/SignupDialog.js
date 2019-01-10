@@ -3,6 +3,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import Dialog from '@material-ui/core/Dialog';
 import Button from '@material-ui/core/Button';
+// import PropTypes from 'prop-types';
 import SocialButtons from '../SocialButtons/SocialButtons';
 import style from './style.css';
 
@@ -51,3 +52,9 @@ export default class SignupDialog extends React.Component {
     );
   }
 }
+
+// SignupDialog.PropTypes = {
+//   openDialog: PropTypes.func.isRequired,
+//   closeDialog: PropTypes.func.isRequired,
+//   open: PropTypes.bool,
+// };

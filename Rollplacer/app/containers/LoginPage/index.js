@@ -24,7 +24,7 @@ export default class SignupPage extends React.PureComponent {
           <div className={style.formWrap}>
             <h4 className={style.mainHeader}>Prisijunk!</h4>
             <p>
-              Dar neregistruotas narys? <a href="/signup">Sign up!</a>{' '}
+              Dar neregistruotas narys? <a href="/signup">Registruokis!</a>{' '}
             </p>
             <div className="divider" />
             <SocialButtons />
