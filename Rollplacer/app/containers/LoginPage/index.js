@@ -1,12 +1,5 @@
 /*
  * SignupPage
- *
- * This is the first thing users see of our App, at the '/' route
- *
- * NOTE: while this component should technically be a stateless functional
- * component (SFC), hot reloading does not currently support SFCs. If hot
- * reloading is not a necessity for you then you can refactor it and remove
- * the linting exception.
  */
 
 import React from 'react';
@@ -16,6 +9,7 @@ import 'materialize-css/dist/js/materialize.min.js';
 import { Link } from 'react-dom';
 import style from './style.css';
 import SocialButtons from '../../components/SocialButtons/SocialButtons';
+import RegBtn from '../../components/RegBtn/RegBtn';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class SignupPage extends React.PureComponent {
@@ -48,9 +42,7 @@ export default class SignupPage extends React.PureComponent {
                   ' Jūsų duomenys nebus naudojami ar renkami komerciniais tikslais. Paspausdami "Registruotis" Jūs turėsite galimyne naudotis visomis tinklapyje veikiančiomis funkcijomis: "Įdėti naują vietą. ją redaguoti", "komentuoti kitas pridėtas vietas, jas vertinti", "organizuoti susitikimus", bei kt.. '
                 }
               </p>
-              <button type="button" className={style.btnReg}>
-                Registruotis
-              </button>
+              <RegBtn />
             </form>
           </div>
         </div>

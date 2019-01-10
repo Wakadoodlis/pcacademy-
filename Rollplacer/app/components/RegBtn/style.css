@@ -1,0 +1,9 @@
+.btnReg {
+  background-color: #f44336;
+  color: #fff;
+  font-size: 1.2rem;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  text-transform: uppercase;
+}

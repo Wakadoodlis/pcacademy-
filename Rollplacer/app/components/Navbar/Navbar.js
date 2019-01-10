@@ -14,13 +14,13 @@ const Navbar = () => (
     </div>
     <ul className="right">
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/">Namai</Link>
       </li>
       <li>
-        <Link to="/contacts">Contacts</Link>
+        <Link to="/contacts">Some Info</Link>
       </li>
       <li>
-        <Link to="/login">Log in</Link>
+        <Link to="/login">Prisijungti</Link>
       </li>
       <li>
         <SignupDialog />

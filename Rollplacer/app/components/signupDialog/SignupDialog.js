@@ -27,19 +27,24 @@ export default class SignupDialog extends React.Component {
     return (
       <div>
         <Button className={style.btnDialog} onClick={this.openDialog}>
-          Sign up
+          Registruotis
         </Button>
         <Dialog open={this.state.open} onClose={this.closeDialog}>
           <DialogTitle>
-            <h3>Prisiregistruok!</h3>
+            Registruokis!
             <p className={style.textDialog}>
-              Jau memberis? <a href="/login">Log in</a>{' '}
+              Jau memberis? <a href="/login">Prisijunk!</a>{' '}
             </p>
           </DialogTitle>
 
           <DialogContent className={style.signupDialog}>
             <SocialButtons />
-            <p className={(style.textDialog, style.arba)}>arba</p>
+            <p className={(style.textDialog, style.dialogArba)}>arba</p>
+            <a href="/Signup" className={style.dialogAnch}>
+              <button type="button" className={style.dialogBtn}>
+                registruokis su el. pastu
+              </button>
+            </a>
           </DialogContent>
         </Dialog>
       </div>
