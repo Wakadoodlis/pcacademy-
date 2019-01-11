@@ -5,3 +5,14 @@
   background-color: #fff;
   margin-top: 3rem;
 }
+
+.signupForm {
+  margin-top: 2rem;
+}
+
+.signupH1 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}

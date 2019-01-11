@@ -28,7 +28,6 @@ export default class PlacesPage extends React.PureComponent {
   render() {
     return (
       <div>
-        <NavBar />
         <h1> Cia yra PlacesPage Page</h1>
       </div>
     );

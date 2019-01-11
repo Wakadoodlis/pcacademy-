@@ -25,10 +25,9 @@ export default class LoginPage extends React.PureComponent {
         <NavBar />
         <div className="container">
           <div className={style.signupWraper}>
-            <h1> Registruokis!</h1>
+            <h1 className={style.signupH1}> Registruokis!</h1>
             <SocialButtons />
-            <h4>arba su el. pastu</h4>
-            <form action="">
+            <form action="" className={style.signupForm}>
               <label htmlFor="name">Vardas</label>
               <input type="text" name="name" />
               <label htmlFor="email">El. pastas</label>
