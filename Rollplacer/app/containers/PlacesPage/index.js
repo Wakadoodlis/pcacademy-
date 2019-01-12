@@ -1,35 +1,55 @@
-/*
- * PlacesPage
- *
- * This is the first thing users see of our App, at the '/' route
- *
- * NOTE: while this component should technically be a stateless functional
- * component (SFC), hot reloading does not currently support SFCs. If hot
- * reloading is not a necessity for you then you can refactor it and remove
- * the linting exception.
- */
-
 import React from 'react';
-import axios from 'axios';
-import NavBar from '../../components/Navbar/Navbar';
+// import axios from 'axios';
+import injectReducer from 'utils/injectReducer';
+import { connect } from 'react-redux';
+import { compose, bindActionCreators } from 'redux';
+import makeSelect from './selector';
+import { setPlaces } from './actions';
+import reducer from './reducer';
 
 /* eslint-disable react/prefer-stateless-function */
-export default class PlacesPage extends React.PureComponent {
+class PlacesPage extends React.PureComponent {
+  state = {
+    // users: [],
+  };
+
   componentDidMount() {
     // axios
     //   .get('http://localhost:1234/places')
     //   .then(res => console.log(res.data));
 
-    axios
-      .get('https://jsonplaceholder.typicode.com/users')
-      .then(res => console.log(res.data));
+    // axios
+    //   .get('https://jsonplaceholder.typicode.com/users')
+    //   .then(res => this.setState({ users: res.data }));
+    console.log('mounted');
   }
 
   render() {
     return (
       <div>
-        <h1> Cia yra PlacesPage Page</h1>
+        {console.log(this.props)}
+        <h1> name</h1>
       </div>
     );
   }
 }
+
+const mapStateToProps = makeSelect();
+
+function mapDispatchToProps(dispatch) {
+  return {
+    setPlaces: places => dispatch(setPlaces(places)),
+  };
+}
+
+const withConnect = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+);
+
+const withReducer = injectReducer({ key: 'placesPage', reducer });
+
+export default compose(
+  withConnect,
+  withReducer,
+)(PlacesPage);
