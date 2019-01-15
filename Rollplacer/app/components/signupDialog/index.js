@@ -4,17 +4,14 @@ import DialogContent from '@material-ui/core/DialogContent';
 import Dialog from '@material-ui/core/Dialog';
 import Button from '@material-ui/core/Button';
 // import PropTypes from 'prop-types';
-import SocialButtons from '../SocialButtons/SocialButtons';
+import { Link } from 'react-router-dom';
+import SocialButtons from '../SocialButtons';
 import style from './style.css';
 
 export default class SignupDialog extends React.Component {
   state = {
     open: false,
   };
-
-  componentDidMount() {
-    console.log('mount');
-  }
 
   openDialog = () => {
     this.setState({ open: true });
@@ -34,18 +31,18 @@ export default class SignupDialog extends React.Component {
           <DialogTitle>
             Registruokis!
             <p className={style.textDialog}>
-              Jau memberis? <a href="/login">Prisijunk!</a>{' '}
+              Jau memberis? <Link to="/login">Prisijunk!</Link>{' '}
             </p>
           </DialogTitle>
 
           <DialogContent className={style.signupDialog}>
             <SocialButtons />
             <p className={(style.textDialog, style.dialogArba)}>arba</p>
-            <a href="/Signup" className={style.dialogAnch}>
+            <Link to="/Signup" className={style.dialogAnch}>
               <button type="button" className={style.dialogBtn}>
                 registruokis su el. pastu
               </button>
-            </a>
+            </Link>
           </DialogContent>
         </Dialog>
       </div>

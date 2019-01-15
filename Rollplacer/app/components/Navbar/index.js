@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import 'materialize-css/dist/css/materialize.min.css';
-import 'materialize-css/dist/js/materialize.min.js';
 import style from './style.css';
-import SignupDialog from '../signupDialog/SignupDialog';
+import SignupDialog from '../signupDialog';
 
 const Navbar = () => (
   <nav className={style.wraperNav}>

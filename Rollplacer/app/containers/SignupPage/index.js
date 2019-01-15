@@ -1,35 +1,32 @@
 /*
- * LoginPage
- *
- * This is the first thing users see of our App, at the '/' route
- *
- * NOTE: while this component should technically be a stateless functional
- * component (SFC), hot reloading does not currently support SFCs. If hot
- * reloading is not a necessity for you then you can refactor it and remove
- * the linting exception.
+ * SignupPage
  */
 
 import React from 'react';
-import NavBar from '../../components/Navbar/Navbar';
-import 'materialize-css/dist/css/materialize.min.css';
-import 'materialize-css/dist/js/materialize.min.js';
-import SocialButtons from '../../components/SocialButtons/SocialButtons';
-import RegBtn from '../../components/RegBtn/RegBtn';
+import { Link } from 'react-dom';
+import NavBar from '../../components/Navbar';
 import style from './style.css';
+import SocialButtons from '../../components/SocialButtons';
+import RegBtn from '../../components/RegisterBtn';
 
 /* eslint-disable react/prefer-stateless-function */
-export default class LoginPage extends React.PureComponent {
+export default class SignupPage extends React.PureComponent {
   render() {
     return (
       <div>
         <NavBar />
         <div className="container">
-          <div className={style.signupWraper}>
-            <h1 className={style.signupH1}> Registruokis!</h1>
+          <div className="divider" />
+          <br />
+          <br />
+          <div className={style.formWrap}>
+            <h4 className={style.mainHeader}>Prisijunk!</h4>
+            <p>
+              Dar neregistruotas narys? <Link to="/signup">Registruokis!</Link>{' '}
+            </p>
+            <div className="divider" />
             <SocialButtons />
-            <form action="" className={style.signupForm}>
-              <label htmlFor="name">Vardas</label>
-              <input type="text" name="name" />
+            <form action="">
               <label htmlFor="email">El. pastas</label>
               <input type="text" name="email" />
               <label htmlFor="password">Slaptažodis</label>

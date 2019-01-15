@@ -2,7 +2,7 @@ import React from 'react';
 // import axios from 'axios';
 import injectReducer from 'utils/injectReducer';
 import { connect } from 'react-redux';
-import { compose, bindActionCreators } from 'redux';
+import { compose } from 'redux';
 import makeSelect from './selector';
 import { setPlaces } from './actions';
 import reducer from './reducer';

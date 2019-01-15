@@ -10,7 +10,7 @@
  */
 
 import React from 'react';
-import NavBar from '../../components/Navbar/Navbar';
+import NavBar from '../../components/Navbar';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class ContactPage extends React.PureComponent {
