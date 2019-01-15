@@ -1,28 +1,51 @@
+/*
+ * SignupPage
+ */
+
 import React from 'react';
+import { Link } from 'react-router-dom';
 import NavBar from '../../components/Navbar';
+import style from './style.css';
 import SocialButtons from '../../components/SocialButtons';
 import RegBtn from '../../components/RegisterBtn';
-import style from './style.css';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class LoginPage extends React.PureComponent {
+  state = {
+    email: '',
+    password: '',
+  };
+
+  onChange = e => this.setState({ [e.target.name]: e.target.value });
+
   render() {
+    const { email, password } = this.state;
     return (
       <div>
         <NavBar />
         <div className="container">
-          <div className={style.signupWraper}>
-            <h1 className={style.signupH1}> Registruokis!</h1>
+          <br />
+          <br />
+          <div className={style.formWrap}>
+            <h4 className={style.mainHeader}>Prisijunk!</h4>
+            <p>
+              Dar neregistruotas narys? <Link to="/signup">Registruokis!</Link>
+            </p>
             <SocialButtons />
-            <form action="" className={style.signupForm}>
-              <label htmlFor="name">Vardas</label>
-              <input type="text" name="name" />
+            <form className={style.marginT}>
               <label htmlFor="email">El. pastas</label>
-              <input type="text" name="email" />
+              <input
+                type="text"
+                name="email"
+                value={email}
+                onChange={this.onChange}
+              />
               <label htmlFor="password">Slaptažodis</label>
               <input
                 type="password"
                 name="password"
+                value={password}
+                onChange={this.onChange}
                 className={style.inputSignup}
               />
               <p>

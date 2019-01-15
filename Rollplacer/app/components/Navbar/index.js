@@ -20,7 +20,7 @@ const Navbar = () => (
       <li>
         <Link to="/login">Prisijungti</Link>
       </li>
-      <li>
+      <li className={style.paddingR}>
         <SignupDialog />
       </li>
     </ul>

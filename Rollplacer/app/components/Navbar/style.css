@@ -3,6 +3,10 @@
   height: 100px;
   padding-top: 1rem;
 }
+
+.paddingR {
+  padding-right: 2rem;
+}
 /* nav ul a {
   font-size: 20px;
 }

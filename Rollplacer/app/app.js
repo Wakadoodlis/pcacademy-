@@ -16,7 +16,7 @@ import { ConnectedRouter } from 'connected-react-router/immutable';
 import history from 'utils/history';
 import 'sanitize.css/sanitize.css';
 import 'materialize-css/dist/css/materialize.min.css';
-import 'materialize-css/dist/js/materialize.min.js';
+// import 'materialize-css/dist/js/materialize.min.js';
 
 // Import root app
 import App from 'containers/App';

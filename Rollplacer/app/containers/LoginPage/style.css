@@ -1,4 +1,9 @@
-.signupWraper {
+body {
+  background-color: #fafafa;
+}
+
+/* FORM WRAPPER */
+.formWrap {
   width: 50%;
   margin: 0 auto;
   padding: 1rem;
@@ -6,13 +11,13 @@
   margin-top: 3rem;
 }
 
-.signupForm {
-  margin-top: 2rem;
+/* MAIN HEADER */
+.mainHeader {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
-.signupH1 {
-  text-align: center;
-  font-weight: 500;
-  font-size: 3rem;
-  margin-bottom: 2rem;
+.marginT {
+  margin-top: 1rem;
 }
