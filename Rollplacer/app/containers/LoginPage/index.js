@@ -18,6 +18,11 @@ export default class LoginPage extends React.PureComponent {
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
 
+  onSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
+  };
+
   render() {
     const { email, password } = this.state;
     return (
@@ -32,7 +37,7 @@ export default class LoginPage extends React.PureComponent {
               Dar neregistruotas narys? <Link to="/signup">Registruokis!</Link>
             </p>
             <SocialButtons />
-            <form className={style.marginT}>
+            <form onSubmit={this.onSubmit} className={style.marginT}>
               <label htmlFor="email">El. pastas</label>
               <input
                 type="text"

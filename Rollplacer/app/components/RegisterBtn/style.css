@@ -6,4 +6,10 @@
   height: 50px;
   border-radius: 5px;
   text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.btnReg:hover {
+  background-color: #c62828;
+  transition: 0.5s;
 }

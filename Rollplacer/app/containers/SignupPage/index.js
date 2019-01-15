@@ -14,6 +14,11 @@ export default class SignupPage extends React.PureComponent {
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
 
+  onSubmit = e => {
+    e.preventDefault();
+    console.log(this.state);
+  };
+
   render() {
     const { name, email, password } = this.state;
     return (
@@ -23,7 +28,7 @@ export default class SignupPage extends React.PureComponent {
           <div className={style.signupWraper}>
             <h1 className={style.signupH1}> Registruokis!</h1>
             <SocialButtons />
-            <form action="" className={style.signupForm}>
+            <form onSubmit={this.onSubmit} className={style.signupForm}>
               <label htmlFor="name">Vardas</label>
               <input
                 type="text"
