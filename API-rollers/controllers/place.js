@@ -8,6 +8,7 @@ exports.create = async function(request, response, next) {
       title: request.body.title,
       distance: request.body.distance,
       condition: request.body.condition,
+      description: request.body.description,
       people: request.body.people,
       city: request.body.city
     });

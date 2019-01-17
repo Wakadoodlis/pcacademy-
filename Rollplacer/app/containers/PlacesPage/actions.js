@@ -1,8 +1,7 @@
-import { SET_PLACES } from './constants';
+import { GET_PLACES } from './constants';
 
-export function setPlaces(places) {
+export function getPlaces() {
   return {
-    type: SET_PLACES,
-    places,
+    type: GET_PLACES,
   };
 }

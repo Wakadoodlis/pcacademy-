@@ -31,12 +31,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(errorHandler);
-app.use(
-  "/places",
-  passport.authenticate("jwt", { session: false }),
-  placeRoute
-);
-app.use("/city", passport.authenticate("jwt", { session: false }), cityRoute);
+app.use("/places", placeRoute);
+app.use("/city", cityRoute);
 app.use("/user", userRoute);
 
 app.listen(CONFIG.PORT, () => {
@@ -44,3 +40,4 @@ app.listen(CONFIG.PORT, () => {
 });
 
 module.exports = app;
+// passport.authenticate("jwt", { session: false })

@@ -1,11 +1,13 @@
 import React from 'react';
-// import axios from 'axios';
+import PropTypes from 'prop-types';
 import injectReducer from 'utils/injectReducer';
+import injectSaga from 'utils/injectSaga';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import makeSelect from './selector';
-import { setPlaces } from './actions';
+import { getPlaces } from './actions';
 import reducer from './reducer';
+import saga from './saga';
 
 /* eslint-disable react/prefer-stateless-function */
 class PlacesPage extends React.PureComponent {
@@ -14,7 +16,7 @@ class PlacesPage extends React.PureComponent {
   };
 
   componentDidMount() {
-    console.log(this.props);
+    this.props.getPlaces();
   }
 
   render() {
@@ -26,11 +28,15 @@ class PlacesPage extends React.PureComponent {
   }
 }
 
+PlacesPage.propTypes = {
+  getPlaces: PropTypes.func,
+};
+
 const mapStateToProps = makeSelect();
 
 function mapDispatchToProps(dispatch) {
   return {
-    setPlaces: places => dispatch(setPlaces(places)),
+    getPlaces: () => dispatch(getPlaces()),
   };
 }
 
@@ -41,7 +47,10 @@ const withConnect = connect(
 
 const withReducer = injectReducer({ key: 'PlacesPage', reducer });
 
+const withSaga = injectSaga({ key: 'PlacesPage', saga });
+
 export default compose(
   withReducer,
+  withSaga,
   withConnect,
 )(PlacesPage);

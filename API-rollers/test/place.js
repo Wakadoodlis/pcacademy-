@@ -49,6 +49,7 @@ describe("place", () => {
         title: "Karžygių kelias",
         distance: 12,
         condition: "Labai gera. Neseniai įrengtas parkas",
+        description: "Nuostabi vieta, puikioj vietoj",
         people: "Žmonių daug. Dažnai su vaikais",
         city: "5c0ffe4ab7014e344c879132"
       };
@@ -62,6 +63,7 @@ describe("place", () => {
           response.body.should.have.property("title");
           response.body.should.have.property("distance");
           response.body.should.have.property("condition");
+          response.body.should.have.property("description");
           response.body.should.have.property("people");
           response.body.should.have.property("city");
           response.body.should.have.property("_id");
