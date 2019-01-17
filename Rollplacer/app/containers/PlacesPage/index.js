@@ -14,20 +14,12 @@ class PlacesPage extends React.PureComponent {
   };
 
   componentDidMount() {
-    // axios
-    //   .get('http://localhost:1234/places')
-    //   .then(res => console.log(res.data));
-
-    // axios
-    //   .get('https://jsonplaceholder.typicode.com/users')
-    //   .then(res => this.setState({ users: res.data }));
-    console.log('mounted');
+    console.log(this.props);
   }
 
   render() {
     return (
       <div>
-        {console.log(this.props)}
         <h1> name</h1>
       </div>
     );
@@ -47,9 +39,9 @@ const withConnect = connect(
   mapDispatchToProps,
 );
 
-const withReducer = injectReducer({ key: 'placesPage', reducer });
+const withReducer = injectReducer({ key: 'PlacesPage', reducer });
 
 export default compose(
-  withConnect,
   withReducer,
+  withConnect,
 )(PlacesPage);

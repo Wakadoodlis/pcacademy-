@@ -11,7 +11,7 @@ const Form = props => {
             <option />
             {props.posts.map(item => (
               <option key={item.id} value={item.id}>
-                {item.title}
+              {item.title}
               </option>
             ))}
           </Field>

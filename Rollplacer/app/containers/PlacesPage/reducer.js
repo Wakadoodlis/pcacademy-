@@ -8,7 +8,7 @@ const initialState = fromJS({
 export default function placesReducer(state = initialState, action) {
   switch (action.type) {
     case SET_PLACES:
-      return state.set('places', action.payload);
+      return state.set('places', action.places);
     default:
       return state;
   }
