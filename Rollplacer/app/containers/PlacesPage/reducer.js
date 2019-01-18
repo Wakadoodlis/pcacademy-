@@ -1,15 +1,17 @@
 import { fromJS } from 'immutable';
-import { GET_PLACES } from './constants';
+import { SET_PLACES } from './constants';
 
 const initialState = fromJS({
   places: [],
 });
 
-export default function placesReducer(state = initialState, action) {
+function placesPageReducer(state = initialState, action) {
   switch (action.type) {
-    case GET_PLACES:
+    case SET_PLACES:
       return state.set('places', action.places);
     default:
       return state;
   }
 }
+
+export default placesPageReducer;
