@@ -1,7 +1,7 @@
 import { fromJS } from 'immutable';
 import { SET_PLACES } from './constants';
 
-const initialState = fromJS({
+export const initialState = fromJS({
   places: [],
 });
 

@@ -27,15 +27,13 @@ class PlacesPage extends React.PureComponent {
               <tr>
                 <th>Pavadinimas</th>
                 <th>Distancijos ilgis</th>
+                <th>Tako bukle</th>
                 <th>Aprasymas</th>
                 <th>Zmoniu kiekis</th>
-                <th>Sios vietos patalpinimo data</th>
-                <th>Miestas</th>
               </tr>
             </thead>
 
             <tbody>
-              {console.log('propsai tbodyhe', this.props)}
               {places.map(item => (
                 <tr key={item.id}>
                   <td>{item.title}</td>
@@ -43,8 +41,6 @@ class PlacesPage extends React.PureComponent {
                   <td>{item.condition}</td>
                   <td>{item.description}</td>
                   <td>{item.people}</td>
-                  <td>{item.create_date}</td>
-                  <td>{item.city}</td>
                 </tr>
               ))}
             </tbody>
