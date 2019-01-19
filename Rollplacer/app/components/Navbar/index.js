@@ -15,7 +15,7 @@ const Navbar = () => (
         <Link to="/">Namai</Link>
       </li>
       <li>
-        <Link to="/contacts">Some Info</Link>
+        <Link to="/places">Surask vieta</Link>
       </li>
       <li>
         <Link to="/login">Prisijungti</Link>

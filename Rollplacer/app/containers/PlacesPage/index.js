@@ -4,6 +4,7 @@ import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import Navbar from '../../components/Navbar';
 import { getPlaces } from './actions';
 import reducer from './reducer';
 import saga from './saga';
@@ -20,33 +21,36 @@ class PlacesPage extends React.PureComponent {
   render() {
     const { places } = this.props;
     return (
-      <div className={style.wraperPlacePage}>
-        <div className="container">
-          <table>
-            <thead>
-              <tr>
-                <th>Pavadinimas</th>
-                <th>Distancijos ilgis</th>
-                <th>Tako bukle</th>
-                <th>Aprasymas</th>
-                <th>Zmoniu kiekis</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {places.map(item => (
-                <tr key={item.id}>
-                  <td>{item.title}</td>
-                  <td>{item.distance}</td>
-                  <td>{item.condition}</td>
-                  <td>{item.description}</td>
-                  <td>{item.people}</td>
+      <React.Fragment>
+        <Navbar />
+        <div className={style.wraperPlacePage}>
+          <div className="container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Pavadinimas</th>
+                  <th>Distancijos ilgis</th>
+                  <th>Tako bukle</th>
+                  <th>Aprasymas</th>
+                  <th>Zmoniu kiekis</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+
+              <tbody>
+                {places.map(item => (
+                  <tr key={item.id}>
+                    <td>{item.title}</td>
+                    <td>{item.distance}</td>
+                    <td>{item.condition}</td>
+                    <td>{item.description}</td>
+                    <td>{item.people}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
