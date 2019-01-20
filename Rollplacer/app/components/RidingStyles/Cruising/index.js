@@ -9,7 +9,11 @@ const Cruising = () => (
     <div className="container">
       <div className="row">
         <div className="col s4">
-          <img src={img} alt="woment cruising in a city" />
+          <img
+            src={img}
+            alt="woment cruising in a city"
+            className={style.cruisingImg}
+          />
         </div>
         <div className="col s6">
           <h3>CRUISING</h3>
