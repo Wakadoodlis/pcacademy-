@@ -4,11 +4,14 @@ import injectReducer from 'utils/injectReducer';
 import injectSaga from 'utils/injectSaga';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
-import { getPlaces } from './actions';
+import { getPlaces, createPlace } from './actions';
 import reducer from './reducer';
 import saga from './saga';
 import makeSelectPlacesPage from './selector';
+import rollersImg from './img/rollers.jpg';
+import NewPlaceForm from '../../components/newPlaceForm';
 import style from './style.css';
 
 /* eslint-disable react/prefer-stateless-function */
@@ -18,36 +21,57 @@ class PlacesPage extends React.PureComponent {
     this.props.getPlaces();
   }
 
+  onSubmit = data => {
+    this.props.createPlace(data);
+  };
+
   render() {
+    const addPlaceBtn = {
+      backgroundColor: '#c62828',
+      width: '200px',
+      borderRadius: '35px',
+    };
+
+    const cardTitle = {
+      fontWeight: '500',
+    };
+
     const { places } = this.props;
     return (
       <React.Fragment>
         <Navbar />
         <div className={style.wraperPlacePage}>
           <div className="container">
-            <table>
-              <thead>
-                <tr>
-                  <th>Pavadinimas</th>
-                  <th>Distancijos ilgis</th>
-                  <th>Tako bukle</th>
-                  <th>Aprasymas</th>
-                  <th>Zmoniu kiekis</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                {places.map(item => (
-                  <tr key={item.id}>
-                    <td>{item.title}</td>
-                    <td>{item.distance}</td>
-                    <td>{item.condition}</td>
-                    <td>{item.description}</td>
-                    <td>{item.people}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className={style.btnPlacesWrap}>
+              <Link
+                to="#"
+                className="btn-floating btn-large pulse"
+                style={addPlaceBtn}
+              >
+                Pridek nauja vieta
+              </Link>
+            </div>
+            <div className="row">
+              {places.map(item => (
+                <div className="col s8 m4" key={item.id}>
+                  <div className="card hoverable">
+                    <div className="card-image">
+                      <img src={rollersImg} alt="" />
+                      <span className="card-title" style={cardTitle}>
+                        {item.title}
+                      </span>
+                    </div>
+                    <div className="card-content">
+                      <p>{item.description}</p>
+                    </div>
+                    <div className="card-action">
+                      <Link to="#"> Skaityti daugiau..</Link>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <NewPlaceForm onSubmit={this.onSubmit} />
           </div>
         </div>
       </React.Fragment>
@@ -58,6 +82,7 @@ class PlacesPage extends React.PureComponent {
 PlacesPage.propTypes = {
   getPlaces: PropTypes.func,
   places: PropTypes.array,
+  createPlace: PropTypes.func,
 };
 
 const mapStateToProps = makeSelectPlacesPage();
@@ -65,6 +90,7 @@ const mapStateToProps = makeSelectPlacesPage();
 function mapDispatchToProps(dispatch) {
   return {
     getPlaces: () => dispatch(getPlaces()),
+    createPlace: data => dispatch(createPlace(data)),
   };
 }
 

@@ -11,11 +11,11 @@ const Dancing = () => (
           <img
             src={img}
             alt="woment cruising in a city"
-            className={style.cruisingImg}
+            className={style.dancingImg}
           />
         </div>
         <div className="col s6">
-          <h3>CRUISING</h3>
+          <h3>Dancing</h3>
           <p>
             Tai paprasčiausiai įsisavinamas važinėjimo stilius, kuriam
             longboardas dažniausiai naudojamas lengviems ir manevringiems

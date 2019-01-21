@@ -1,3 +1,6 @@
 export default {
-  GET_PLACES: '/places',
+  PLACES: {
+    BASE: '/places',
+    NEW_PLACE: '/places/new',
+  },
 };
