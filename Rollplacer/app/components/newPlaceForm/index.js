@@ -1,10 +1,11 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form/immutable';
+import { Field, reduxForm, reset } from 'redux-form/immutable';
+import style from './style.css';
 
 function NewPlace(props) {
   const { handleSubmit } = props;
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={style.newPlaceForm}>
       <div>
         <label htmlFor="title">Title</label>
         <Field name="title" component="input" type="text" />
@@ -25,7 +26,9 @@ function NewPlace(props) {
         <label htmlFor="people">people</label>
         <Field name="people" component="input" type="text" />
       </div>
-      <button type="submit">sukurti</button>
+      <button type="submit" className="btn">
+        sukurti
+      </button>
     </form>
   );
 }

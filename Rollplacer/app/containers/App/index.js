@@ -15,6 +15,8 @@ import PlacesPage from 'containers/PlacesPage/Loadable';
 import SignupPage from 'containers/SignupPage/Loadable';
 import LoginPage from 'containers/LoginPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 import Cruising from '../../components/RidingStyles/Cruising';
 import Dancing from '../../components/RidingStyles/Dancing';
 import Freeride from '../../components/RidingStyles/Freeride';
@@ -23,19 +25,23 @@ import Freestyle from '../../components/RidingStyles/Freestyle';
 
 export default function App() {
   return (
-    <div>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/places" component={PlacesPage} />
-        <Route exact path="/signup" component={SignupPage} />
-        <Route exact path="/login" component={LoginPage} />
-        <Route exact path="/cruising" component={Cruising} />
-        <Route exact path="/dancing" component={Dancing} />
-        <Route exact path="/freeride" component={Freeride} />
-        <Route exact path="/downhill" component={Downhill} />
-        <Route exact path="/freestyle" component={Freestyle} />
-        <Route component={NotFoundPage} />
-      </Switch>
-    </div>
+    <React.Fragment>
+      <Navbar />
+      <div>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/places" component={PlacesPage} />
+          <Route exact path="/signup" component={SignupPage} />
+          <Route exact path="/login" component={LoginPage} />
+          <Route exact path="/cruising" component={Cruising} />
+          <Route exact path="/dancing" component={Dancing} />
+          <Route exact path="/freeride" component={Freeride} />
+          <Route exact path="/downhill" component={Downhill} />
+          <Route exact path="/freestyle" component={Freestyle} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </div>
+      <Footer />
+    </React.Fragment>
   );
 }

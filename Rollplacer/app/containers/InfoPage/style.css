@@ -1,0 +1,24 @@
+.infoWraper {
+  height: 500px;
+  position: relative;
+}
+
+.infoH {
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+  color: grey;
+  padding-top: 150px;
+}
+
+.rideStyle {
+  padding: 10px 50px;
+  background: lightgray;
+  color: #333;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin: 0 auto;
+  display: block;
+  width: 130px;
+}

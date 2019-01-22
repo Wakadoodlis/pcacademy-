@@ -12,8 +12,10 @@ function* getPlaces(action) {
 }
 
 function* createPlaces(action) {
-  const result = yield call(placesServise.create, action.place);
-  console.log('create place result ', result);
+  yield call(placesServise.create, action.place);
+  yield put({
+    type: GET_PLACES,
+  });
 }
 // Individual exports for testing
 export default function* getPlacesSaga() {

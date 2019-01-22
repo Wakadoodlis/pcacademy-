@@ -4,7 +4,6 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import NavBar from '../../components/Navbar';
 import style from './style.css';
 import SocialButtons from '../../components/SocialButtons';
 import RegBtn from '../../components/RegisterBtn';
@@ -27,7 +26,6 @@ export default class LoginPage extends React.PureComponent {
     const { email, password } = this.state;
     return (
       <div>
-        <NavBar />
         <div className="container">
           <br />
           <br />

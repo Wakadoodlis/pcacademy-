@@ -1,0 +1,10 @@
+.footerWraper {
+  padding-top: 20px;
+  color: #fff;
+  background-color: #353e48;
+}
+
+.footerCopyright {
+  background-color: #2f363f;
+  padding: 0.5rem 1rem;
+}

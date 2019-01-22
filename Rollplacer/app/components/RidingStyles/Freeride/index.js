@@ -1,10 +1,9 @@
 import React from 'react';
-import Navbar from '../../Navbar';
+import img from './img/cruising.jpg';
 import style from './style.css';
 
 const Freeride = () => (
   <React.Fragment>
-    <Navbar />
     <div className="container">
       <div className="row">
         <div className="col s4">

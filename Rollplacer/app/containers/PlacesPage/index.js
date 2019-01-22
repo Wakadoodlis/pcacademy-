@@ -5,7 +5,6 @@ import injectSaga from 'utils/injectSaga';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Link } from 'react-router-dom';
-import Navbar from '../../components/Navbar';
 import { getPlaces, createPlace } from './actions';
 import reducer from './reducer';
 import saga from './saga';
@@ -39,12 +38,11 @@ class PlacesPage extends React.PureComponent {
     const { places } = this.props;
     return (
       <React.Fragment>
-        <Navbar />
         <div className={style.wraperPlacePage}>
           <div className="container">
             <div className={style.btnPlacesWrap}>
               <Link
-                to="#"
+                to={NewPlaceForm}
                 className="btn-floating btn-large pulse"
                 style={addPlaceBtn}
               >
@@ -71,6 +69,7 @@ class PlacesPage extends React.PureComponent {
                 </div>
               ))}
             </div>
+            <h4>Prideti nauja vieta</h4>
             <NewPlaceForm onSubmit={this.onSubmit} />
           </div>
         </div>

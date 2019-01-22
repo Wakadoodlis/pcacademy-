@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../../components/Navbar';
 import SocialButtons from '../../components/SocialButtons';
 import RegBtn from '../../components/RegisterBtn';
 import style from './style.css';
@@ -23,7 +22,6 @@ export default class SignupPage extends React.PureComponent {
     const { name, email, password } = this.state;
     return (
       <div>
-        <NavBar />
         <div className="container">
           <div className={style.signupWraper}>
             <h1 className={style.signupH1}> Registruokis!</h1>

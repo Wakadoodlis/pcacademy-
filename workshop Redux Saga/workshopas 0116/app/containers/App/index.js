@@ -19,6 +19,7 @@ export default function App() {
   return (
     <div>
       <Switch>
+        <Navbar></Navbar>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/post" component={PostPage} />
         <Route component={NotFoundPage} />
