@@ -1,9 +1,17 @@
 import React from 'react';
-import { Field, reduxForm, reset } from 'redux-form/immutable';
+import { Field, reduxForm } from 'redux-form/immutable';
 import style from './style.css';
 
 function NewPlace(props) {
   const { handleSubmit } = props;
+
+  const addPlaceBtn = {
+    backgroundColor: '#c62828',
+    width: '200px',
+    borderRadius: '35px',
+    margin: '0 auto',
+    display: 'block',
+  };
   return (
     <form onSubmit={handleSubmit} className={style.newPlaceForm}>
       <div>
@@ -26,7 +34,11 @@ function NewPlace(props) {
         <label htmlFor="people">people</label>
         <Field name="people" component="input" type="text" />
       </div>
-      <button type="submit" className="btn">
+      <button
+        type="submit"
+        className="btn-floating btn-large pulse"
+        style={addPlaceBtn}
+      >
         sukurti
       </button>
     </form>

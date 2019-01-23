@@ -22,17 +22,16 @@ class PlacesPage extends React.PureComponent {
 
   onSubmit = data => {
     this.props.createPlace(data);
+    // this.props.history.push('/places');
   };
 
   render() {
-    const addPlaceBtn = {
-      backgroundColor: '#c62828',
-      width: '200px',
-      borderRadius: '35px',
-    };
-
     const cardTitle = {
       fontWeight: '500',
+    };
+
+    const textCenter = {
+      textAlign: 'center',
     };
 
     const { places } = this.props;
@@ -40,15 +39,6 @@ class PlacesPage extends React.PureComponent {
       <React.Fragment>
         <div className={style.wraperPlacePage}>
           <div className="container">
-            <div className={style.btnPlacesWrap}>
-              <Link
-                to={NewPlaceForm}
-                className="btn-floating btn-large pulse"
-                style={addPlaceBtn}
-              >
-                Pridek nauja vieta
-              </Link>
-            </div>
             <div className="row">
               {places.map(item => (
                 <div className="col s8 m4" key={item.id}>
@@ -63,13 +53,13 @@ class PlacesPage extends React.PureComponent {
                       <p>{item.description}</p>
                     </div>
                     <div className="card-action">
-                      <Link to="#"> Skaityti daugiau..</Link>
+                      <Link to={item.id}> Skaityti daugiau..</Link>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-            <h4>Prideti nauja vieta</h4>
+            <h4 style={textCenter}>Prideti nauja vieta</h4>
             <NewPlaceForm onSubmit={this.onSubmit} />
           </div>
         </div>

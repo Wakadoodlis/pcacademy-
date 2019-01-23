@@ -16,6 +16,7 @@
   background: rgba(0, 0, 0, 0.4);
   width: 100%;
   overflow: hidden;
+  border-radius: 5px;
 }
 .mainh1 {
   font-weight: 700;

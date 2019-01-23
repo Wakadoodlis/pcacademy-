@@ -22,7 +22,7 @@ const HeroVid = () => (
     <div className={style.homeWraper}>
       <video src={RollVid} autoPlay muted loop width="100%" />
       <div className={style.homeText}>
-        <h1 className={style.mainh1}> Tau patinka skrosti su riedlente? </h1>
+        <h1 className={style.mainh1}> Tau patinka skrosti riedlente? </h1>
         <h5>Prisijunk! Čia rasi pačias geriausias vietas tą daryti.</h5>
         <Link to="/signup">
           <button type="button" className="pulse" style={heroBtn}>
