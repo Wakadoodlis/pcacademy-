@@ -4,10 +4,12 @@ import { GET_PLACE, SET_PLACE } from './constants';
 import * as placeServise from '../../API/placesServise';
 
 function* getPlace(action) {
-  const result = yield call(placeServise.get, action.id);
+  console.log('action from place saga', action);
+  const result = yield call(placeServise.get);
+  console.log('cia result is saga', result);
   yield put({
     type: SET_PLACE,
-    place: result.id,
+    place: result.data,
   });
 }
 // Individual exports for testing

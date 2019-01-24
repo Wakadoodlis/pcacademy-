@@ -14,7 +14,7 @@ import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import makeSelectPlacePage from './selectors';
 import reducer from './reducer';
-import { getPlace } from './actions';
+import { getPlace, setPlace } from './actions';
 import saga from './saga';
 
 /* eslint-disable react/prefer-stateless-function */
@@ -44,7 +44,7 @@ const mapStateToProps = makeSelectPlacePage();
 
 function mapDispatchToProps(dispatch) {
   return {
-    getPlace: id => dispatch(getPlace(id)),
+    getPlace: () => dispatch(getPlace()),
   };
 }
 

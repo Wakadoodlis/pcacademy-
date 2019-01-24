@@ -4,6 +4,7 @@ import { GET_PLACES, SET_PLACES, CREATE_PLACE } from './constants';
 import * as placesServise from '../../API/placesServise';
 
 function* getPlaces(action) {
+  console.log('action from places saga', action);
   const result = yield call(placesServise.get);
   yield put({
     type: SET_PLACES,

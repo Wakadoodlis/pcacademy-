@@ -16,7 +16,7 @@ import style from './style.css';
 /* eslint-disable react/prefer-stateless-function */
 class PlacesPage extends React.PureComponent {
   componentDidMount() {
-    console.log('this props:', this.props);
+    console.log('this props from placesPage:', this.props);
     this.props.getPlaces();
   }
 
@@ -35,30 +35,35 @@ class PlacesPage extends React.PureComponent {
     };
 
     const { places } = this.props;
+    const placesList = places.length ? (
+      places.map(item => (
+        <div className="col s8 m4" key={item.id}>
+          <div className="card hoverable">
+            <div className="card-image">
+              <img src={rollersImg} alt="" />
+              <span className="card-title" style={cardTitle}>
+                {item.title}
+              </span>
+            </div>
+            <div className="card-content">
+              <p>{item.description}</p>
+            </div>
+            <div className="card-action">
+              <Link to={`/places/${item.id}`}> Skaityti daugiau..</Link>
+            </div>
+          </div>
+        </div>
+      ))
+    ) : (
+      <div className="center">
+        <h3> Šiuo metu duomenys nepasiekiami... </h3>
+      </div>
+    );
     return (
       <React.Fragment>
         <div className={style.wraperPlacePage}>
           <div className="container">
-            <div className="row">
-              {places.map(item => (
-                <div className="col s8 m4" key={item.id}>
-                  <div className="card hoverable">
-                    <div className="card-image">
-                      <img src={rollersImg} alt="" />
-                      <span className="card-title" style={cardTitle}>
-                        {item.title}
-                      </span>
-                    </div>
-                    <div className="card-content">
-                      <p>{item.description}</p>
-                    </div>
-                    <div className="card-action">
-                      <Link to={item.id}> Skaityti daugiau..</Link>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <div className="row">{placesList}</div>
             <h4 style={textCenter}>Prideti nauja vieta</h4>
             <NewPlaceForm onSubmit={this.onSubmit} />
           </div>
