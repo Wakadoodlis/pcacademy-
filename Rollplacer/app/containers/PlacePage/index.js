@@ -14,14 +14,14 @@ import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import makeSelectPlacePage from './selectors';
 import reducer from './reducer';
-import { getPlace, setPlace } from './actions';
+import { getPlace } from './actions';
 import saga from './saga';
 
 /* eslint-disable react/prefer-stateless-function */
 export class PlacePage extends React.Component {
   componentDidMount() {
     console.log('this props from PagePage:', this.props);
-    this.props.getPlace();
+    this.props.getPlace(this.props.match.params.id);
   }
 
   render() {
