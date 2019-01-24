@@ -7,7 +7,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
 import { compose } from 'redux';
 
 import injectSaga from 'utils/injectSaga';
@@ -22,6 +21,7 @@ export class PlacePage extends React.Component {
   componentDidMount() {
     console.log('this props from PagePage:', this.props);
     this.props.getPlace(this.props.match.params.id);
+    console.log(this.props.match.params.id);
   }
 
   render() {
@@ -44,7 +44,7 @@ const mapStateToProps = makeSelectPlacePage();
 
 function mapDispatchToProps(dispatch) {
   return {
-    getPlace: () => dispatch(getPlace()),
+    getPlace: id => dispatch(getPlace(id)),
   };
 }
 
