@@ -3,7 +3,6 @@ import { SET_PLACES } from './constants';
 
 export const initialState = fromJS({
   places: [],
-  errors: [],
 });
 
 function placesPageReducer(state = initialState, action) {

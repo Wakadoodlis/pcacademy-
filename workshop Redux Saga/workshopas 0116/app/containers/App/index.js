@@ -12,6 +12,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import HomePage from 'containers/HomePage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+import Navbar from "../../components/form"
 import PostPage from '../PostPage/Loadable';
 import GlobalStyle from '../../global-styles';
 
