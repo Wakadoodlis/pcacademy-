@@ -15,6 +15,8 @@ import makeSelectPlacePage from './selectors';
 import reducer from './reducer';
 import { getPlace } from './actions';
 import saga from './saga';
+import GoogleMap from '../../components/googleMap';
+import style from './style.css';
 
 /* eslint-disable react/prefer-stateless-function */
 export class PlacePage extends React.Component {
@@ -26,10 +28,30 @@ export class PlacePage extends React.Component {
 
   render() {
     const { place } = this.props;
+    const { title, distance, condition, description, city } = place;
     console.log('place object:', place);
     return (
-      <div>
-        <h1>place page</h1>
+      <div className={style.Wraper}>
+        <h3>
+          Ttitle:
+          {title}
+        </h3>
+        <h4>
+          distance:
+          {distance}
+        </h4>
+        <h4>
+          condition:
+          {condition}
+        </h4>
+        <h4>
+          description:
+          {description}
+        </h4>
+        <div className={style.googleMapContainer}>
+          <p>cia maps</p>
+          <GoogleMap />
+        </div>
       </div>
     );
   }

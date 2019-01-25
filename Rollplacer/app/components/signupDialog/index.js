@@ -23,15 +23,18 @@ export default class SignupDialog extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={style.Font}>
         <Button className={style.btnDialog} onClick={this.openDialog}>
           Registruotis
         </Button>
         <Dialog open={this.state.open} onClose={this.closeDialog}>
-          <DialogTitle>
+          <DialogTitle className={style.Font}>
             Registruokis!
-            <p className={style.textDialog}>
-              Jau memberis? <Link to="/login">Prisijunk!</Link>{' '}
+            <p className={(style.textDialog, style.font)}>
+              Jau memberis?{' '}
+              <Link to="/login" className={style.Font}>
+                Prisijunk!
+              </Link>{' '}
             </p>
           </DialogTitle>
 

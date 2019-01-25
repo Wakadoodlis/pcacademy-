@@ -11,10 +11,11 @@ const heroBtn = {
   color: '#fff',
   borderRadius: '6px',
   border: 'none',
-  fontSize: '1.3rem',
-  fontWeight: '600',
+  fontSize: '1.5rem',
+  fontWeight: '800',
   backgroundColor: '#f44336',
   transition: '0.5s',
+  fontFamily: 'Raleway',
 };
 
 const HeroVid = () => (

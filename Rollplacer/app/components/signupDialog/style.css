@@ -1,11 +1,17 @@
+.Font {
+  font-family: 'Raleway', sans-serif !important;
+}
+
 .btnDialog {
   color: #fff !important;
+  font-family: 'Raleway', sans-serif !important;
 }
 
 .signupDialog {
   width: 480px;
   height: 350px;
   padding: 2rem;
+  font-family: 'Raleway', sans-serif !important;
 }
 .textDialog {
   color: grey;

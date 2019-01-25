@@ -16,7 +16,6 @@ import PlacePage from 'containers/PlacePage/Loadable';
 import SignupPage from 'containers/SignupPage/Loadable';
 import LoginPage from 'containers/LoginPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
-import WebFont from 'webfontloader';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Cruising from '../../components/RidingStyles/Cruising';
@@ -24,14 +23,8 @@ import Dancing from '../../components/RidingStyles/Dancing';
 import Freeride from '../../components/RidingStyles/Freeride';
 import Downhill from '../../components/RidingStyles/Downhill';
 import Freestyle from '../../components/RidingStyles/Freestyle';
-import Place from '../../components/Place';
 
 export default function App() {
-  WebFont.load({
-    google: {
-      families: ['Raleway:300,400,700', 'sans-serif'],
-    },
-  });
   return (
     <React.Fragment>
       <Navbar />
