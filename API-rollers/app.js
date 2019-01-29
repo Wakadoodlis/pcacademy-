@@ -35,7 +35,7 @@ app.use("/places", placeRoute);
 app.use("/city", cityRoute);
 app.use("/user", userRoute);
 
-app.listen(CONFIG.PORT, () => {
+app.listen(process.env.PORT || CONFIG.PORT, () => {
   console.log("server started succesfully!");
 });
 

@@ -5,11 +5,14 @@ import style from './style.css';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class SignupPage extends React.PureComponent {
-  state = {
-    name: '',
-    email: '',
-    password: '',
-  };
+  constructor() {
+    super();
+    this.state = {
+      name: '',
+      email: '',
+      password: '',
+    };
+  }
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
 

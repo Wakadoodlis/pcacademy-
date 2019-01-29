@@ -3,43 +3,41 @@ const bcrypt = require("bcrypt");
 
 const Schema = mongoose.Schema;
 
-let UserSchema = new Schema(
-  {
-    method: {
+let UserSchema = new Schema({
+  method: {
+    type: String,
+    enum: ["local", "google", "facebook"],
+    required: true
+  },
+  local: {
+    name: {
+      type: String
+    },
+    email: {
       type: String,
-      enum: ["local", "google", "facebook"],
-      required: true
+      sparse: true
     },
-    local: {
-      email: {
-        type: String,
-        sparse: true
-      },
-      password: { type: String }
+    password: { type: String }
+  },
+  google: {
+    id: {
+      type: String
     },
-    google: {
-      id: {
-        type: String
-      },
-      email: {
-        type: String,
-        lowercase: true
-      }
+    email: {
+      type: String,
+      lowercase: true
+    }
+  },
+  facebook: {
+    id: {
+      type: String
     },
-    facebook: {
-      id: {
-        type: String
-      },
-      email: {
-        type: String,
-        lowercase: true
-      }
+    email: {
+      type: String,
+      lowercase: true
     }
   }
-  // {
-  //   versionKey: "Somdata"
-  // }
-);
+});
 
 UserSchema.pre("save", createHashedPassword);
 

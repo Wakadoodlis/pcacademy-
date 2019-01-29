@@ -1,6 +1,7 @@
 module.exports = {
   PORT: 1234,
-  CONNECTION_STRING: "mongodb://localhost:27017/longboards",
+  CONNECTION_STRING:
+    "mongodb://WakaAdmin:WuokaAdminis9@ds143614.mlab.com:43614/rollers",
   CONNECTION_STRING_TEST: "mongodb://localhost:27017/test",
   JWT_SECRET: "wakadakadoo",
   JWT_HEADER_KEY: "wakaton",

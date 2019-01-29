@@ -4,17 +4,19 @@ const UserModel = require("../models/user");
 
 const signUpStrategy = new LocalStrategy(
   {
-    usernameField: "email",
+    usernameField: "name",
+    useremailField: "email",
     passwordField: "password"
   },
   createUser
 );
 
-async function createUser(email, password, done) {
+async function createUser(name, email, password, done) {
   try {
     const user = new UserModel({
       method: "local",
       local: {
+        name: name,
         email: email,
         password: password
       }

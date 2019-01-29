@@ -10,10 +10,13 @@ import RegBtn from '../../components/RegisterBtn';
 
 /* eslint-disable react/prefer-stateless-function */
 export default class LoginPage extends React.PureComponent {
-  state = {
-    email: '',
-    password: '',
-  };
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      password: '',
+    };
+  }
 
   onChange = e => this.setState({ [e.target.name]: e.target.value });
 
