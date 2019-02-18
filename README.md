@@ -1,4 +1,6 @@
 # pcacademy-
 
 
-FRONT END ACADEMY ND AND CODING CHALANGE.
+FRONT END ACADEMY #2
+
+JS, Typescript, Node.js, React.js, Redux. 
